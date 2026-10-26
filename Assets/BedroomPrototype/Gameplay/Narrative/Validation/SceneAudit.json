@@ -1,0 +1,70 @@
+{
+  "scene": "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+  "editMode": true,
+  "sceneAssets": [
+    "Assets/Scenes/BedroomPrototype.unity",
+    "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+    "Assets/Scenes/SampleScene.unity"
+  ],
+  "audioReferencesUnchanged": true,
+  "audioSources": 26,
+  "activeCameras": 1,
+  "activeListeners": 1,
+  "players": 1,
+  "dialogueOwners": 1,
+  "introControllers": 1,
+  "corpseControllers": 1,
+  "directors": 1,
+  "sharedFacialIdentity": true,
+  "introAssets": [
+    {
+      "path": "Assets/BedroomPrototype/Gameplay/Narrative/Dialogue/NightIntroduction1.asset",
+      "sequenceId": "truth-night-1",
+      "lines": 17,
+      "events": []
+    },
+    {
+      "path": "Assets/BedroomPrototype/Gameplay/Narrative/Dialogue/NightIntroduction2.asset",
+      "sequenceId": "truth-night-2",
+      "lines": 12,
+      "events": []
+    },
+    {
+      "path": "Assets/BedroomPrototype/Gameplay/Narrative/Dialogue/NightIntroduction3.asset",
+      "sequenceId": "truth-night-3",
+      "lines": 15,
+      "events": [
+        {
+          "eventId": "glass.fracture",
+          "pauseForAnimation": true,
+          "hideDuringEvent": false
+        },
+        {
+          "eventId": "glass.reveal",
+          "pauseForAnimation": true,
+          "hideDuringEvent": true
+        }
+      ]
+    }
+  ],
+  "corpseConfig": "{\"initialDelay\":20.0,\"beckoningSeconds\":5.0,\"reachingSeconds\":4.0,\"resistanceSeconds\":1.75,\"retreatSeconds\":1.2000000476837159,\"surrenderSeconds\":2.5,\"cooldown\":{\"x\":20.0,\"y\":30.0},\"gazeDegrees\":35.0,\"maximumCameraDrop\":0.12999999523162843,\"cameraRecoverySpeed\":0.25,\"warningRoll\":1.5,\"warningYaw\":3.0,\"mattressMotion\":0.004000000189989805,\"creak\":{\"instanceID\":0}}",
+  "corpseWeights": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "allOriginalEncountersEnabled": true,
+  "corpseEnabled": true,
+  "automaticScheduling": true,
+  "useFixedSeed": false,
+  "debugAutoSkip": false,
+  "debugPanelVisible": false,
+  "revealLightEnabled": false,
+  "fragmentCount": 12,
+  "nightDuration": 180.0,
+  "missingScripts": 0,
+  "bedAnchor": "(-0.78, 1.00, 0.95)",
+  "playerPosition": "(0.70, 0.03, -1.40)",
+  "truthPosition": "(1.80, 0.00, 2.04)",
+  "corpsePosition": "(-1.83, 0.69, 0.18)"
+}

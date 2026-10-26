@@ -1,0 +1,187 @@
+{
+  "passed": true,
+  "order": [
+    "UnderBed",
+    "Door",
+    "Window"
+  ],
+  "reproducible": true,
+  "cases": [
+    {
+      "name": "Current configured closed-window first encounter",
+      "seed": -1522885214,
+      "trials": 1000,
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "counts": [
+        353,
+        326,
+        321
+      ],
+      "percentages": [
+        35.3,
+        32.6,
+        32.1
+      ],
+      "chiSquare": 1.778,
+      "agrees": true
+    },
+    {
+      "name": "Equal weights, fixed seed",
+      "seed": 12345,
+      "trials": 1000,
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "counts": [
+        361,
+        315,
+        324
+      ],
+      "percentages": [
+        36.1,
+        31.5,
+        32.4
+      ],
+      "chiSquare": 3.566,
+      "agrees": true
+    },
+    {
+      "name": "Open window 3x",
+      "seed": 901,
+      "trials": 5000,
+      "weights": [
+        1.0,
+        1.0,
+        3.0
+      ],
+      "counts": [
+        980,
+        1001,
+        3019
+      ],
+      "percentages": [
+        19.6,
+        20.02,
+        60.38
+      ],
+      "chiSquare": 0.52133333333333332,
+      "agrees": true
+    },
+    {
+      "name": "Window excluded outside bed",
+      "seed": 902,
+      "trials": 2000,
+      "weights": [
+        1.0,
+        1.0,
+        0.0
+      ],
+      "counts": [
+        1006,
+        994,
+        0
+      ],
+      "percentages": [
+        50.3,
+        49.7,
+        0.0
+      ],
+      "chiSquare": 0.072,
+      "agrees": true
+    },
+    {
+      "name": "Under-bed on cooldown",
+      "seed": 903,
+      "trials": 2000,
+      "weights": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "counts": [
+        0,
+        986,
+        1014
+      ],
+      "percentages": [
+        0.0,
+        49.3,
+        50.7
+      ],
+      "chiSquare": 0.392,
+      "agrees": true
+    },
+    {
+      "name": "Independent normal seed 1",
+      "seed": 1679618620,
+      "trials": 1000,
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "counts": [
+        326,
+        336,
+        338
+      ],
+      "percentages": [
+        32.6,
+        33.6,
+        33.8
+      ],
+      "chiSquare": 0.24800000000000005,
+      "agrees": true
+    },
+    {
+      "name": "Independent normal seed 2",
+      "seed": 1654800535,
+      "trials": 1000,
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "counts": [
+        317,
+        340,
+        343
+      ],
+      "percentages": [
+        31.7,
+        34.0,
+        34.3
+      ],
+      "chiSquare": 1.214,
+      "agrees": true
+    },
+    {
+      "name": "Independent normal seed 3",
+      "seed": -2057078786,
+      "trials": 1000,
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "counts": [
+        325,
+        320,
+        355
+      ],
+      "percentages": [
+        32.5,
+        32.0,
+        35.5
+      ],
+      "chiSquare": 2.15,
+      "agrees": true
+    }
+  ]
+}

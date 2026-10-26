@@ -1,0 +1,21 @@
+{
+    "finished": true,
+    "passed": true,
+    "error": "",
+    "checks": [
+        "PASS: existing director genuinely selects Night 3 corpse from its fourth weighted candidate",
+        "PASS: corpse warning starts before coordinated door encounter",
+        "PASS: corpse mandatory pull waits while door owns listening defense",
+        "PASS: corpse warning does not interrupt R defense",
+        "PASS: door defense completes before corpse requires Q",
+        "PASS: corpse reservation excludes simultaneous mandatory blanket defense",
+        "PASS: Q successfully counters corpse after coordinated door retreat",
+        "PASS: director excludes corpse during its success cooldown",
+        "PASS: existing window excursion remains available after fourth threat",
+        "PASS: existing manual window close animation starts",
+        "PASS: corpse cannot begin lethal action during standing window interaction",
+        "PASS: manual closing preserves danger reset",
+        "PASS: bed return remains available after coordinated encounters",
+        "PASS: encounter coordination never resets or stops the running night clock"
+    ]
+}

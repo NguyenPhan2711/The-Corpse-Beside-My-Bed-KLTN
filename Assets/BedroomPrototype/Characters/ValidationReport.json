@@ -1,0 +1,75 @@
+{
+  "scene": "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+  "editMode": true,
+  "players": 1,
+  "playerPosition": "(0.70, 0.03, -1.40)",
+  "playerAndCorpseSameMesh": true,
+  "sourceMesh": "HumanM_BodyMesh",
+  "animators": [
+    {
+      "name": "TruthBody",
+      "avatar": "HumanM_ModelAvatar",
+      "valid": true,
+      "human": true,
+      "rootMotion": false,
+      "controller": "TruthDesk"
+    },
+    {
+      "name": "MaleModel",
+      "avatar": "HumanM_ModelAvatar",
+      "valid": true,
+      "human": true,
+      "rootMotion": false,
+      "controller": "PlayerBody"
+    },
+    {
+      "name": "MaleModel",
+      "avatar": "HumanM_ModelAvatar",
+      "valid": true,
+      "human": true,
+      "rootMotion": false,
+      "controller": "CorpseBody"
+    }
+  ],
+  "missingMaterials": 0,
+  "missingScripts": 0,
+  "missingPrefabs": 0,
+  "cameras": 1,
+  "listeners": 1,
+  "anchors": [
+    {
+      "name": "NightBodyAnchor",
+      "parent": "Bed",
+      "position": "(-0.78, 0.70, 0.18)"
+    },
+    {
+      "name": "NightCameraAnchor",
+      "parent": "Bed",
+      "position": "(-0.78, 1.00, 0.95)"
+    },
+    {
+      "name": "MorningBodyAnchor",
+      "parent": "Study desk",
+      "position": "(1.20, 0.03, 1.48)"
+    },
+    {
+      "name": "MorningCameraAnchor",
+      "parent": "Study desk",
+      "position": "(1.20, 1.22, 1.52)"
+    }
+  ],
+  "prefabs": [
+    {
+      "name": "PlayerBody",
+      "path": "Assets/BedroomPrototype/Characters/Player/PlayerBody.prefab"
+    },
+    {
+      "name": "StainedGlassFigurePlaceholder",
+      "path": "Assets/BedroomPrototype/Characters/Corpse/StainedGlassCorpse.prefab"
+    },
+    {
+      "name": "TheTruth",
+      "path": "Assets/BedroomPrototype/Characters/TheTruth/TheTruthDesk.prefab"
+    }
+  ]
+}

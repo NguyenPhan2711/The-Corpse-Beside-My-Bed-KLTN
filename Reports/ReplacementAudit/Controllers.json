@@ -1,0 +1,143 @@
+[
+  {
+    "path": "Assets/BedroomPrototype/Characters/TheTruth/TruthDesk.controller",
+    "parameters": [],
+    "layers": [
+      {
+        "name": "Base Layer",
+        "defaultState": "Static hunched desk perch",
+        "states": [
+          {
+            "name": "Static hunched desk perch",
+            "motion": "Assets/BedroomPrototype/Characters/TheTruth/Truth_DeskPerch.anim",
+            "transitions": []
+          }
+        ]
+      },
+      {
+        "name": "HumanM@Talk01 upper body - weight 0",
+        "defaultState": "HumanM@Talk01",
+        "states": [
+          {
+            "name": "HumanM@Talk01",
+            "motion": "Assets/Kevin Iglesias/Human Animations/Animations/Male/Social/Conversation/HumanM@Talk01.fbx",
+            "transitions": []
+          }
+        ]
+      },
+      {
+        "name": "HumanM@Idle01 upper body - weight 0",
+        "defaultState": "HumanM@Idle01",
+        "states": [
+          {
+            "name": "HumanM@Idle01",
+            "motion": "Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle01.fbx",
+            "transitions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "Assets/BedroomPrototype/Gameplay/Animations/PlayerDesk.controller",
+    "parameters": [],
+    "layers": [
+      {
+        "name": "Base Layer",
+        "defaultState": "PlayerDesk",
+        "states": [
+          {
+            "name": "PlayerDesk",
+            "motion": "Assets/BedroomPrototype/Gameplay/Animations/PlayerDeskStatic.anim",
+            "transitions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "Assets/BedroomPrototype/Gameplay/Animations/PlayerBed.controller",
+    "parameters": [],
+    "layers": [
+      {
+        "name": "Base Layer",
+        "defaultState": "PlayerBed",
+        "states": [
+          {
+            "name": "PlayerBed",
+            "motion": "Assets/BedroomPrototype/Characters/Animations/Corpse_RestingStatic_Humanoid.anim",
+            "transitions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "Assets/BedroomPrototype/Characters/Corpse/CorpseBody.controller",
+    "parameters": [],
+    "layers": [
+      {
+        "name": "Base Layer",
+        "defaultState": "Temporary lying pose",
+        "states": [
+          {
+            "name": "Temporary lying pose",
+            "motion": "Assets/BedroomPrototype/Characters/Animations/Corpse_RestingStatic_Humanoid.anim",
+            "transitions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "Assets/BedroomPrototype/Gameplay/UnderBed/Visuals/UnderBedMonster.controller",
+    "parameters": [],
+    "layers": [
+      {
+        "name": "Base Layer",
+        "defaultState": "Static creature crouch",
+        "states": [
+          {
+            "name": "Static creature crouch",
+            "motion": "Assets/BedroomPrototype/Gameplay/UnderBed/Visuals/UnderBedCrouchStatic.anim",
+            "transitions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "Assets/BedroomPrototype/Gameplay/Door/Visuals/DoorMonsterIdle.controller",
+    "parameters": [],
+    "layers": [
+      {
+        "name": "Base Layer",
+        "defaultState": "Development idle",
+        "states": [
+          {
+            "name": "Development idle",
+            "motion": "Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle01.fbx",
+            "transitions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "Assets/BedroomPrototype/Gameplay/Window/Visuals/WindowMonsterIdle.controller",
+    "parameters": [],
+    "layers": [
+      {
+        "name": "Base Layer",
+        "defaultState": "Development idle",
+        "states": [
+          {
+            "name": "Development idle",
+            "motion": "Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle01.fbx",
+            "transitions": []
+          }
+        ]
+      }
+    ]
+  }
+]

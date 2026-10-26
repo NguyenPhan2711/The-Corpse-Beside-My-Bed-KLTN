@@ -1,0 +1,23 @@
+[
+    {
+        "suite":  "AudioPlayModeChecks.json",
+        "finished":  true,
+        "passed":  true,
+        "checks":  60,
+        "error":  ""
+    },
+    {
+        "suite":  "SilentSchedulingPlayModeChecks.json",
+        "finished":  true,
+        "passed":  true,
+        "checks":  33,
+        "error":  ""
+    },
+    {
+        "suite":  "DefenseResourcePlayModeChecks.json",
+        "finished":  true,
+        "passed":  true,
+        "checks":  52,
+        "error":  ""
+    }
+]

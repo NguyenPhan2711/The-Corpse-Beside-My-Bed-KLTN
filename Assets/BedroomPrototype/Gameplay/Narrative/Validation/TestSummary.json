@@ -1,0 +1,60 @@
+{
+    "allPassed":  true,
+    "totalChecks":  451,
+    "suites":  [
+                   {
+                       "suite":  "NarrativeChecks",
+                       "passed":  true,
+                       "checks":  61,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "CoordinationChecks",
+                       "passed":  true,
+                       "checks":  14,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "DefenseResourcePlayModeChecks",
+                       "passed":  true,
+                       "checks":  52,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "DoorPlayModeChecks",
+                       "passed":  true,
+                       "checks":  29,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "UnderBedPlayModeChecks",
+                       "passed":  true,
+                       "checks":  41,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "WindowPlayModeChecks",
+                       "passed":  true,
+                       "checks":  48,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "NightStateRepairChecks",
+                       "passed":  true,
+                       "checks":  103,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "MorningNightPlayModeChecks",
+                       "passed":  true,
+                       "checks":  70,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "SilentSchedulingPlayModeChecks",
+                       "passed":  true,
+                       "checks":  33,
+                       "error":  ""
+                   }
+               ]
+}

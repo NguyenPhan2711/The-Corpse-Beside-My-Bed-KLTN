@@ -1,0 +1,5 @@
+COMPLETED. The earlier Editor compilation blockage was resolved after the foreground/domain reload completed. The staged integration is now applied and wired in Assets/Scenes/BedroomPrototype_PlayerFigure.unity, saved in place.
+
+Use active scripts under Assets/BedroomPrototype/Gameplay/Scripts, not the historical .txt copies in this directory. Current configuration notes: Assets/BedroomPrototype/Gameplay/Lighting.md.
+
+Play validation passed: 33 story-lighting/switch checks and 70 complete three-day flow checks. Reports and stage previews are in Assets/BedroomPrototype/Gameplay/Validation. No pending setup or required manual wiring remains. The existing scene, player and characters were preserved. The test-only input focus override is restored after each test and does not change saved project settings.

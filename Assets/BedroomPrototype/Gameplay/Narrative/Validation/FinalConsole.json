@@ -1,0 +1,46 @@
+{
+    "success":  true,
+    "command":  "command console status",
+    "data":  {
+                 "command":  "console status",
+                 "parameters":  {
+
+                                },
+                 "result":  {
+                                "entries":  [
+
+                                            ],
+                                "cursor":  36279,
+                                "session":  "d85e6609f0e54b088a16b1907f4417b6",
+                                "returned":  0,
+                                "dropped":  false,
+                                "reset":  false,
+                                "counts":  {
+                                               "error":  1897,
+                                               "warn":  0,
+                                               "log":  103
+                                           },
+                                "groundTruth":  {
+                                                    "sampledUtc":  "2026-10-25T22:46:52.518524Z",
+                                                    "ageMs":  92,
+                                                    "compilationFailed":  false,
+                                                    "compiling":  false,
+                                                    "consoleErrors":  0,
+                                                    "consoleWarnings":  0,
+                                                    "consoleLogs":  20,
+                                                    "seeded":  true
+                                                }
+                            },
+                 "target":  {
+                                "host":  "127.0.0.1",
+                                "port":  7800,
+                                "projectPath":  "G:\\Unity Project\\The Corpse Beside My Bed"
+                            }
+             },
+    "errors":  [
+
+               ],
+    "warnings":  [
+
+                 ]
+}

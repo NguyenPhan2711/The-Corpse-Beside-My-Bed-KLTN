@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e942807d2592c24eb444904b5b872a6, type: 3}
+  m_Name: WindowNight2
+  m_EditorClassIdentifier: Assembly-CSharp::WindowEncounterConfig
+  encounterEnabled: 1
+  initialDelay: 28
+  knockingDuration: 4.5
+  openingDuration: 2
+  emergingDuration: 1.85
+  reactionWindow: 1.85
+  requiredExposure: 0.8
+  retreatDuration: 1.5
+  attackDuration: 0.6
+  successCooldown: 18
+  safeClosedCooldown: 20
+  minimumKnocking: 3
+  minimumEmerging: 1.4
+  earlyOpenMultiplier: 1.5
+  middleOpenMultiplier: 2
+  maximumOpenMultiplier: 3
+  firstDangerThreshold: 15
+  secondDangerThreshold: 30
+  quietKnock: {fileID: 8300000, guid: 4a1abef467e0cc84298dc9cd375ac27d, type: 3}
+  aggressiveKnock: {fileID: 8300000, guid: 4a1abef467e0cc84298dc9cd375ac27d, type: 3}
+  latchRattle: {fileID: 0}
+  opening: {fileID: 8300000, guid: 51c9e2ccdc6b4a2439010696c024c490, type: 3}
+  monsterBreathing: {fileID: 0}
+  retreating: {fileID: 0}
+  closing: {fileID: 0}
+  attacking: {fileID: 0}
+  quietKnockVolume: 0.2
+  aggressiveKnockVolume: 0.65
+  monsterBreathingVolume: 0.14
+  attackVolume: 0.8
+  breathingPriority: 100
+  attackPriority: 20
+  knockPauseStart: 0.4
+  knockPauseEnd: 0.12
+  textCues: 1
+  logResults: 1
+  resetExposureOnMiss: 1
+  exposureDecayPerSecond: 2
+  silentApproachDuration: 1.2
+  silentEmergingDuration: 2.5
+  silentReactionWindow: 2.5
+  showSilentAttackDebugCue: 0

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501e54cdcb330a743a5d8ebdcd9c6641, type: 3}
+  m_Name: DoorNight2
+  m_EditorClassIdentifier: Assembly-CSharp::DoorEncounterConfig
+  encounterEnabled: 1
+  initialDelay: 23
+  footstepsDuration: 4.5
+  approachSilence: 0.7
+  gentleDuration: 3.5
+  aggressiveDuration: 4.5
+  silenceAfterBanging: 1.1
+  handleDuration: 0.5
+  openingDuration: 2
+  reactionGrace: 0.65
+  listeningDuration: 3
+  retreatDuration: 3
+  attackDuration: 0.7
+  cooldown: {x: 18, y: 28}
+  openingAngle: 95
+  distantFootsteps: {fileID: 0}
+  approachingFootsteps: {fileID: 8300000, guid: de9f56dd28b0a304e90c94d88eac101b, type: 3}
+  gentleKnocking: {fileID: 8300000, guid: cf25ab164dc9eeb4895ad70e04b62e32, type: 3}
+  aggressiveKnocking: {fileID: 8300000, guid: 51b2cbc3eb9db544785ee99959f06e01, type: 3}
+  handleTurning: {fileID: 0}
+  doorCreaking: {fileID: 8300000, guid: 8b87bfb7d960c1a4caf82d713e599c91, type: 3}
+  monsterListening: {fileID: 0}
+  retreating: {fileID: 8300000, guid: de9f56dd28b0a304e90c94d88eac101b, type: 3}
+  attacking: {fileID: 0}
+  doorClosing: {fileID: 0}
+  approachStartVolume: 0.12
+  approachEndVolume: 0.55
+  retreatStartVolume: 0.5
+  gentleStartVolume: 0.18
+  gentleEndVolume: 0.32
+  aggressiveStartVolume: 0.42
+  aggressiveEndVolume: 0.72
+  gentlePauseStart: 0.65
+  gentlePauseEnd: 0.4
+  aggressivePauseStart: 0.3
+  aggressivePauseEnd: 0.1
+  loopFootsteps: 0
+  textCues: 1
+  logResults: 1

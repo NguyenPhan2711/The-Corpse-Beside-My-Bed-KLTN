@@ -1,0 +1,82 @@
+{
+  "scene": "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+  "sceneExists": true,
+  "scenes": [
+    "Assets/Scenes/BedroomPrototype.unity",
+    "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+    "Assets/Scenes/SampleScene.unity"
+  ],
+  "editMode": true,
+  "automatic": true,
+  "fixedSeedEnabled": false,
+  "logging": false,
+  "referencesAssigned": true,
+  "playerState": "InBed",
+  "schedules": [
+    {
+      "asset": "Assets/BedroomPrototype/Gameplay/Scheduling/Config/NightSchedule1.asset",
+      "initialDelay": 18.0,
+      "interval": "(8.00, 14.00)",
+      "underBedWeight": 1.0,
+      "doorWeight": 1.0,
+      "windowWeight": 1.0,
+      "tutorial": "None",
+      "allowOverlappingWarnings": false,
+      "maximumWarningConcurrency": 2
+    },
+    {
+      "asset": "Assets/BedroomPrototype/Gameplay/Scheduling/Config/NightSchedule2.asset",
+      "initialDelay": 16.0,
+      "interval": "(6.00, 11.50)",
+      "underBedWeight": 1.0,
+      "doorWeight": 1.0,
+      "windowWeight": 1.0,
+      "tutorial": "None",
+      "allowOverlappingWarnings": false,
+      "maximumWarningConcurrency": 2
+    },
+    {
+      "asset": "Assets/BedroomPrototype/Gameplay/Scheduling/Config/NightSchedule3.asset",
+      "initialDelay": 14.0,
+      "interval": "(4.00, 9.00)",
+      "underBedWeight": 1.0,
+      "doorWeight": 1.0,
+      "windowWeight": 1.0,
+      "tutorial": "None",
+      "allowOverlappingWarnings": true,
+      "maximumWarningConcurrency": 2
+    }
+  ],
+  "silent": [
+    {
+      "silentApproachDuration": 1.2,
+      "silentEmergingDuration": 2.5,
+      "silentReactionWindow": 2.5,
+      "showSilentAttackDebugCue": false
+    },
+    {
+      "silentApproachDuration": 1.2,
+      "silentEmergingDuration": 2.5,
+      "silentReactionWindow": 2.5,
+      "showSilentAttackDebugCue": false
+    },
+    {
+      "silentApproachDuration": 1.2,
+      "silentEmergingDuration": 2.5,
+      "silentReactionWindow": 2.5,
+      "showSilentAttackDebugCue": false
+    }
+  ],
+  "allEncountersEnabled": true,
+  "windowClosed": true,
+  "cameras": 1,
+  "listeners": 1,
+  "players": 1,
+  "interactors": 1,
+  "directors": 1,
+  "missingScripts": 0,
+  "truth": "(1.80, 0.00, 2.04)",
+  "corpse": "(-1.83, 0.69, 0.18)",
+  "nightDuration": 180.0,
+  "audioClips": 0
+}

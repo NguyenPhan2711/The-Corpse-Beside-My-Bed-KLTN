@@ -1,0 +1,39 @@
+{
+  "scene": "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+  "playing": false,
+  "day": 1,
+  "completed": 0,
+  "lightingControllers": 1,
+  "switches": 1,
+  "ceilingInitiallyOn": false,
+  "switchPosition": "(0.90, 1.25, -2.72)",
+  "transitionSeconds": 3.0,
+  "nightSeconds": 180.0,
+  "movement": true,
+  "collision": true,
+  "cameras": 1,
+  "listeners": 1,
+  "missingScripts": 0,
+  "inputFocus": "PointersAndKeyboardsRespectGameViewFocus",
+  "inputBackground": "ResetAndDisableNonBackgroundDevices",
+  "lights": [
+    {
+      "name": "Laptop subtle glow",
+      "mode": "Realtime",
+      "enabled": true,
+      "intensity": 0.12
+    },
+    {
+      "name": "Ceiling light",
+      "mode": "Realtime",
+      "enabled": false,
+      "intensity": 3.0
+    },
+    {
+      "name": "Window daylight and moonlight",
+      "mode": "Realtime",
+      "enabled": true,
+      "intensity": 1.8
+    }
+  ]
+}

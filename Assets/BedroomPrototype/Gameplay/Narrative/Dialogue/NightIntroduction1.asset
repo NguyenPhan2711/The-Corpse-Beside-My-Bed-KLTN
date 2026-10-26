@@ -1,0 +1,290 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43b58dd5625d7e4489ca099088080bb, type: 3}
+  m_Name: NightIntroduction1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
+  sequenceId: truth-night-1
+  blockMovement: 1
+  allowLook: 1
+  lines:
+  - speaker: TheTruth
+    text: Can't sleep?
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Of course you can't.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Well, since we're both awake, I might as well tell you something.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: If you hear scratching beneath the bed, don't hide immediately.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Wait until whatever's under there shows itself.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Then pull that blanket over your head.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: And if someone comes knocking at the door...
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Don't make a sound when it opens.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Just hold your breath.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Oh, and keep that flashlight nearby.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Something likes looking through your window.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Shine it in the face if it gets too close.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: And if it leaves the window open, you might want to close it.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Unless you enjoy being surprised.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Funny, isn't it?
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: All these things trying to get to you.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: And you're still the one who has to keep yourself alive.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []

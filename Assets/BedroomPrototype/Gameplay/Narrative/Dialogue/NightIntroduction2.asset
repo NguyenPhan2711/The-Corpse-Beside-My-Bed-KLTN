@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43b58dd5625d7e4489ca099088080bb, type: 3}
+  m_Name: NightIntroduction2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
+  sequenceId: truth-night-2
+  blockMovement: 1
+  allowLook: 1
+  lines:
+  - speaker: TheTruth
+    text: You're still here.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: I suppose that's something.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: You know how they work now, don't you?
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Keep listening.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Keep watching.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Don't waste that flashlight.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: And about that window...
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Leaving it open won't make anything go away.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: It just means you won't hear it coming next time.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Strange how comfortable you've gotten with things that hurt you.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Anyway.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: TheTruth
+    text: Try to get through another night.
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []

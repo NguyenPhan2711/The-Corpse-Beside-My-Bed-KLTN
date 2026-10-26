@@ -1,0 +1,106 @@
+{
+  "scene": "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+  "editMode": true,
+  "monsterCount": 1,
+  "blanketCount": 1,
+  "requiredReferencesAssigned": true,
+  "avatars": [
+    {
+      "name": "MaleModel",
+      "valid": true,
+      "rootMotion": false
+    },
+    {
+      "name": "UnderBedHumanoidModel",
+      "valid": true,
+      "rootMotion": false
+    },
+    {
+      "name": "TruthBody",
+      "valid": true,
+      "rootMotion": false
+    },
+    {
+      "name": "MaleModel",
+      "valid": true,
+      "rootMotion": false
+    }
+  ],
+  "configs": [
+    {
+      "name": "UnderBedNight1",
+      "initialDelay": 15.0,
+      "scratchingDuration": 4.0,
+      "emergingDuration": 5.0,
+      "reactionWindow": 1.75,
+      "requiredHidingDuration": 3.0,
+      "retreatDuration": 2.0,
+      "cooldown": "(15.00, 25.00)",
+      "release": "OneWarning",
+      "assignedAudio": 0
+    },
+    {
+      "name": "UnderBedNight2",
+      "initialDelay": 12.0,
+      "scratchingDuration": 3.5,
+      "emergingDuration": 4.3,
+      "reactionWindow": 1.5,
+      "requiredHidingDuration": 3.0,
+      "retreatDuration": 2.0,
+      "cooldown": "(12.00, 20.00)",
+      "release": "Attack",
+      "assignedAudio": 0
+    },
+    {
+      "name": "UnderBedNight3",
+      "initialDelay": 10.0,
+      "scratchingDuration": 3.0,
+      "emergingDuration": 3.8,
+      "reactionWindow": 1.25,
+      "requiredHidingDuration": 3.5,
+      "retreatDuration": 2.0,
+      "cooldown": "(10.00, 18.00)",
+      "release": "Attack",
+      "assignedAudio": 0
+    }
+  ],
+  "anchors": [
+    {
+      "name": "HiddenPosition",
+      "position": "(-1.10, 0.03, -0.38)",
+      "parent": "EncounterAnchors"
+    },
+    {
+      "name": "EmergingPosition",
+      "position": "(0.78, 0.03, -0.85)",
+      "parent": "EncounterAnchors"
+    },
+    {
+      "name": "ExposedPosition",
+      "position": "(0.42, 0.03, -0.38)",
+      "parent": "EncounterAnchors"
+    },
+    {
+      "name": "AttackPosition",
+      "position": "(0.70, 1.63, -0.97)",
+      "parent": "First Person Camera"
+    }
+  ],
+  "bedClearance": 0.31,
+  "bedTop": 0.45,
+  "ceilingInitiallyOn": false,
+  "lightingBlendSeconds": 3.0,
+  "nightSeconds": 180.0,
+  "coverSeconds": 0.25,
+  "uncoverSeconds": 0.22,
+  "movement": true,
+  "collision": true,
+  "day": 1,
+  "cameras": 1,
+  "listeners": 1,
+  "eventSystems": 1,
+  "missingScripts": 0,
+  "missingPrefabAssets": 0,
+  "inputFocus": "PointersAndKeyboardsRespectGameViewFocus",
+  "background": "ResetAndDisableNonBackgroundDevices"
+}

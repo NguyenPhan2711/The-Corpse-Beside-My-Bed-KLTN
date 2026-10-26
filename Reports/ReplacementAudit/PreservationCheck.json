@@ -1,0 +1,20 @@
+[
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\Scenes\\BedroomPrototype.unity",
+        "before":  "9D33312A3598DAC9F17C8629A0C9A0CC8B9888DFA39D4523255C35A84357308F",
+        "after":  "9D33312A3598DAC9F17C8629A0C9A0CC8B9888DFA39D4523255C35A84357308F",
+        "unchanged":  true
+    },
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\Scenes\\BedroomPrototype_PlayerFigure.unity",
+        "before":  "6725BD16B8CD376BD8D229DE5BCA40F38B2B73131B750675C902C8C44897F7AD",
+        "after":  "6725BD16B8CD376BD8D229DE5BCA40F38B2B73131B750675C902C8C44897F7AD",
+        "unchanged":  true
+    },
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\Scenes\\SampleScene.unity",
+        "before":  "07FCE8B04804DDCCB3026DB5B43D8DC41BA138E49D50D36A5C24877081EACDCA",
+        "after":  "07FCE8B04804DDCCB3026DB5B43D8DC41BA138E49D50D36A5C24877081EACDCA",
+        "unchanged":  true
+    }
+]

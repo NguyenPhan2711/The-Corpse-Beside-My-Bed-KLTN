@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363dec4e51ca33841a5e25820fce8a01, type: 3}
+  m_Name: CorpseNight3
+  m_EditorClassIdentifier: Assembly-CSharp::CorpseEncounterConfig
+  initialDelay: 20
+  beckoningSeconds: 5
+  reachingSeconds: 4
+  resistanceSeconds: 1.75
+  retreatSeconds: 1.2
+  surrenderSeconds: 2.5
+  cooldown: {x: 20, y: 30}
+  gazeDegrees: 35
+  maximumCameraDrop: 0.13
+  cameraRecoverySpeed: 0.25
+  warningRoll: 1.5
+  warningYaw: 3
+  mattressMotion: 0.004
+  creak: {fileID: 0}

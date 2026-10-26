@@ -1,0 +1,57 @@
+{
+    "editor":  "6000.4.1f1",
+    "scene":  "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+    "allPassed":  true,
+    "totalChecks":  376,
+    "suites":  [
+                   {
+                       "suite":  "DefenseResourcePlayModeChecks",
+                       "finished":  true,
+                       "passed":  true,
+                       "checks":  52,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "DoorPlayModeChecks",
+                       "finished":  true,
+                       "passed":  true,
+                       "checks":  29,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "MorningNightPlayModeChecks",
+                       "finished":  true,
+                       "passed":  true,
+                       "checks":  70,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "NightStateRepairChecks",
+                       "finished":  true,
+                       "passed":  true,
+                       "checks":  103,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "SilentSchedulingPlayModeChecks",
+                       "finished":  true,
+                       "passed":  true,
+                       "checks":  33,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "UnderBedPlayModeChecks",
+                       "finished":  true,
+                       "passed":  true,
+                       "checks":  41,
+                       "error":  ""
+                   },
+                   {
+                       "suite":  "WindowPlayModeChecks",
+                       "finished":  true,
+                       "passed":  true,
+                       "checks":  48,
+                       "error":  ""
+                   }
+               ]
+}

@@ -1,0 +1,11 @@
+{
+  "finished": true,
+  "passed": true,
+  "checks": [
+    "PASS: Editor shortcut completes remaining morning and enters night 2",
+    "PASS: clock victory cancels bed travel and restores clean bed result",
+    "PASS: Editor shortcut completes remaining morning and enters night 3",
+    "PASS: closing starts before clock victory",
+    "PASS: clock victory cancels manual closing and restores clean bed result"
+  ]
+}

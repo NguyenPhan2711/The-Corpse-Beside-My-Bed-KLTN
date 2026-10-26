@@ -1,0 +1,30 @@
+[
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\BedroomPrototype\\Audios\\MainDoorMonster\\AgressiveKnocking.mp3",
+        "unchanged":  true
+    },
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\BedroomPrototype\\Audios\\MainDoorMonster\\GentleKnocking.mp3",
+        "unchanged":  true
+    },
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\BedroomPrototype\\Audios\\MainDoorMonster\\OpenDoor.mp3",
+        "unchanged":  true
+    },
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\BedroomPrototype\\Audios\\MainDoorMonster\\Walking.mp3",
+        "unchanged":  true
+    },
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\BedroomPrototype\\Audios\\UnderTheBedMonster\\Scratching.mp3",
+        "unchanged":  true
+    },
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\BedroomPrototype\\Audios\\WindowMonster\\KnockingWindow.mp3",
+        "unchanged":  true
+    },
+    {
+        "path":  "G:\\Unity Project\\The Corpse Beside My Bed\\Assets\\BedroomPrototype\\Audios\\WindowMonster\\OpenWindow.mp3",
+        "unchanged":  true
+    }
+]

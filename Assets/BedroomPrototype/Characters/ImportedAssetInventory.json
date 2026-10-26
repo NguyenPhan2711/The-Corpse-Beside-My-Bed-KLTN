@@ -1,0 +1,895 @@
+{
+    "models":  [
+                   {
+                       "path":  "Assets/Kevin Iglesias/Human Animations/Models/HumanF_Model.fbx",
+                       "importer":  "Human",
+                       "avatars":  [
+                                       {
+                                           "name":  "HumanF_ModelAvatar",
+                                           "valid":  true,
+                                           "human":  true
+                                       }
+                                   ],
+                       "renderers":  [
+                                         {
+                                             "name":  "HumanF_BodyMesh",
+                                             "materials":  [
+                                                               "Lit:Universal Render Pipeline/Lit"
+                                                           ]
+                                         }
+                                     ]
+                   },
+                   {
+                       "path":  "Assets/Kevin Iglesias/Human Animations/Models/HumanM_Model.fbx",
+                       "importer":  "Human",
+                       "avatars":  [
+                                       {
+                                           "name":  "HumanM_ModelAvatar",
+                                           "valid":  true,
+                                           "human":  true
+                                       }
+                                   ],
+                       "renderers":  [
+                                         {
+                                             "name":  "HumanM_BodyMesh",
+                                             "materials":  [
+                                                               "Lit:Universal Render Pipeline/Lit"
+                                                           ]
+                                         }
+                                     ]
+                   }
+               ],
+    "clipCount":  118,
+    "clips":  [
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle01-Idle02.fbx",
+                      "name":  "HumanF@Idle01-Idle02",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle01.fbx",
+                      "name":  "HumanF@Idle01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  2.7
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle02-Idle01.fbx",
+                      "name":  "HumanF@Idle02-Idle01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.7666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle02.fbx",
+                      "name":  "HumanF@Idle02",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  2.7
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Fall01.fbx",
+                      "name":  "HumanF@Fall01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 - Begin.fbx",
+                      "name":  "HumanF@Jump01 - Begin",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 - Land.fbx",
+                      "name":  "HumanF@Jump01 - Land",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 [RM] - Begin.fbx",
+                      "name":  "HumanF@Jump01 [RM] - Begin",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 [RM] - Land.fbx",
+                      "name":  "HumanF@Jump01 [RM] - Land",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 [RM].fbx",
+                      "name":  "HumanF@Jump01 [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.53333342
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01.fbx",
+                      "name":  "HumanF@Jump01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.53333342
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_Backward.fbx",
+                      "name":  "HumanF@Run01_Backward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_BackwardLeft.fbx",
+                      "name":  "HumanF@Run01_BackwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_BackwardRight.fbx",
+                      "name":  "HumanF@Run01_BackwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_Forward.fbx",
+                      "name":  "HumanF@Run01_Forward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_ForwardLeft.fbx",
+                      "name":  "HumanF@Run01_ForwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_ForwardRight.fbx",
+                      "name":  "HumanF@Run01_ForwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_Left.fbx",
+                      "name":  "HumanF@Run01_Left",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_Right.fbx",
+                      "name":  "HumanF@Run01_Right",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_Backward [RM].fbx",
+                      "name":  "HumanF@Run01_Backward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_BackwardLeft [RM].fbx",
+                      "name":  "HumanF@Run01_BackwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_BackwardRight [RM].fbx",
+                      "name":  "HumanF@Run01_BackwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_Forward [RM].fbx",
+                      "name":  "HumanF@Run01_Forward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_ForwardLeft [RM].fbx",
+                      "name":  "HumanF@Run01_ForwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_ForwardRight [RM].fbx",
+                      "name":  "HumanF@Run01_ForwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_Left [RM].fbx",
+                      "name":  "HumanF@Run01_Left [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_Right [RM].fbx",
+                      "name":  "HumanF@Run01_Right [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_Forward.fbx",
+                      "name":  "HumanF@Sprint01_Forward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_ForwardLeft.fbx",
+                      "name":  "HumanF@Sprint01_ForwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_ForwardRight.fbx",
+                      "name":  "HumanF@Sprint01_ForwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_Left.fbx",
+                      "name":  "HumanF@Sprint01_Left",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_Right.fbx",
+                      "name":  "HumanF@Sprint01_Right",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_Forward [RM].fbx",
+                      "name":  "HumanF@Sprint01_Forward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_ForwardLeft [RM].fbx",
+                      "name":  "HumanF@Sprint01_ForwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_ForwardRight [RM].fbx",
+                      "name":  "HumanF@Sprint01_ForwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_Left [RM].fbx",
+                      "name":  "HumanF@Sprint01_Left [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_Right [RM].fbx",
+                      "name":  "HumanF@Sprint01_Right [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Turn/HumanF@Turn01_Left [RM].fbx",
+                      "name":  "HumanF@Turn01_Left [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Turn/HumanF@Turn01_Left.fbx",
+                      "name":  "HumanF@Turn01_Left",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Turn/HumanF@Turn01_Right [RM].fbx",
+                      "name":  "HumanF@Turn01_Right [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Turn/HumanF@Turn01_Right.fbx",
+                      "name":  "HumanF@Turn01_Right",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Backward.fbx",
+                      "name":  "HumanF@Walk01_Backward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_BackwardLeft.fbx",
+                      "name":  "HumanF@Walk01_BackwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_BackwardRight.fbx",
+                      "name":  "HumanF@Walk01_BackwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Forward.fbx",
+                      "name":  "HumanF@Walk01_Forward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_ForwardLeft.fbx",
+                      "name":  "HumanF@Walk01_ForwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_ForwardRight.fbx",
+                      "name":  "HumanF@Walk01_ForwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Left.fbx",
+                      "name":  "HumanF@Walk01_Left",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Right.fbx",
+                      "name":  "HumanF@Walk01_Right",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_Backward [RM].fbx",
+                      "name":  "HumanF@Walk01_Backward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_BackwardLeft [RM].fbx",
+                      "name":  "HumanF@Walk01_BackwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_BackwardRight [RM].fbx",
+                      "name":  "HumanF@Walk01_BackwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_Forward [RM].fbx",
+                      "name":  "HumanF@Walk01_Forward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_ForwardLeft [RM].fbx",
+                      "name":  "HumanF@Walk01_ForwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_ForwardRight [RM].fbx",
+                      "name":  "HumanF@Walk01_ForwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_Left [RM].fbx",
+                      "name":  "HumanF@Walk01_Left [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_Right [RM].fbx",
+                      "name":  "HumanF@Walk01_Right [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Female/Social/Conversation/HumanF@Talk01.fbx",
+                      "name":  "HumanF@Talk01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  2.266667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle01-Idle02.fbx",
+                      "name":  "HumanM@Idle01-Idle02",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle01.fbx",
+                      "name":  "HumanM@Idle01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  2.7
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle02-Idle01.fbx",
+                      "name":  "HumanM@Idle02-Idle01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.7666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle02.fbx",
+                      "name":  "HumanM@Idle02",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  2.7
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Fall01.fbx",
+                      "name":  "HumanM@Fall01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 - Begin.fbx",
+                      "name":  "HumanM@Jump01 - Begin",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 - Land.fbx",
+                      "name":  "HumanM@Jump01 - Land",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 [RM] - Begin.fbx",
+                      "name":  "HumanM@Jump01 [RM] - Begin",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 [RM] - Land.fbx",
+                      "name":  "HumanM@Jump01 [RM] - Land",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6666667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 [RM].fbx",
+                      "name":  "HumanM@Jump01 [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.53333342
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01.fbx",
+                      "name":  "HumanM@Jump01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.53333342
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_Backward.fbx",
+                      "name":  "HumanM@Run01_Backward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_BackwardLeft.fbx",
+                      "name":  "HumanM@Run01_BackwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_BackwardRight.fbx",
+                      "name":  "HumanM@Run01_BackwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_Forward.fbx",
+                      "name":  "HumanM@Run01_Forward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_ForwardLeft.fbx",
+                      "name":  "HumanM@Run01_ForwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_ForwardRight.fbx",
+                      "name":  "HumanM@Run01_ForwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_Left.fbx",
+                      "name":  "HumanM@Run01_Left",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_Right.fbx",
+                      "name":  "HumanM@Run01_Right",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_Backward [RM].fbx",
+                      "name":  "HumanM@Run01_Backward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_BackwardLeft [RM].fbx",
+                      "name":  "HumanM@Run01_BackwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_BackwardRight [RM].fbx",
+                      "name":  "HumanM@Run01_BackwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_Forward [RM].fbx",
+                      "name":  "HumanM@Run01_Forward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_ForwardLeft [RM].fbx",
+                      "name":  "HumanM@Run01_ForwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_ForwardRight [RM].fbx",
+                      "name":  "HumanM@Run01_ForwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_Left [RM].fbx",
+                      "name":  "HumanM@Run01_Left [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_Right [RM].fbx",
+                      "name":  "HumanM@Run01_Right [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.6
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_Forward.fbx",
+                      "name":  "HumanM@Sprint01_Forward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_ForwardLeft.fbx",
+                      "name":  "HumanM@Sprint01_ForwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_ForwardRight.fbx",
+                      "name":  "HumanM@Sprint01_ForwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_Left.fbx",
+                      "name":  "HumanM@Sprint01_Left",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_Right.fbx",
+                      "name":  "HumanM@Sprint01_Right",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_Forward [RM].fbx",
+                      "name":  "HumanM@Sprint01_Forward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_ForwardLeft [RM].fbx",
+                      "name":  "HumanM@Sprint01_ForwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_ForwardRight [RM].fbx",
+                      "name":  "HumanM@Sprint01_ForwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_Left [RM].fbx",
+                      "name":  "HumanM@Sprint01_Left [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_Right [RM].fbx",
+                      "name":  "HumanM@Sprint01_Right [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.533333361
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Turn/HumanM@Turn01_Left [RM].fbx",
+                      "name":  "HumanM@Turn01_Left [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Turn/HumanM@Turn01_Left.fbx",
+                      "name":  "HumanM@Turn01_Left",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Turn/HumanM@Turn01_Right [RM].fbx",
+                      "name":  "HumanM@Turn01_Right [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Turn/HumanM@Turn01_Right.fbx",
+                      "name":  "HumanM@Turn01_Right",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  1.0
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Backward.fbx",
+                      "name":  "HumanM@Walk01_Backward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_BackwardLeft.fbx",
+                      "name":  "HumanM@Walk01_BackwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_BackwardRight.fbx",
+                      "name":  "HumanM@Walk01_BackwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Forward.fbx",
+                      "name":  "HumanM@Walk01_Forward",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_ForwardLeft.fbx",
+                      "name":  "HumanM@Walk01_ForwardLeft",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_ForwardRight.fbx",
+                      "name":  "HumanM@Walk01_ForwardRight",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Left.fbx",
+                      "name":  "HumanM@Walk01_Left",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Right.fbx",
+                      "name":  "HumanM@Walk01_Right",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_Backward [RM].fbx",
+                      "name":  "HumanM@Walk01_Backward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_BackwardLeft [RM].fbx",
+                      "name":  "HumanM@Walk01_BackwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_BackwardRight [RM].fbx",
+                      "name":  "HumanM@Walk01_BackwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_Forward [RM].fbx",
+                      "name":  "HumanM@Walk01_Forward [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_ForwardLeft [RM].fbx",
+                      "name":  "HumanM@Walk01_ForwardLeft [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_ForwardRight [RM].fbx",
+                      "name":  "HumanM@Walk01_ForwardRight [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_Left [RM].fbx",
+                      "name":  "HumanM@Walk01_Left [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_Right [RM].fbx",
+                      "name":  "HumanM@Walk01_Right [RM]",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.8000001
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Male/Social/Conversation/HumanM@Talk01.fbx",
+                      "name":  "HumanM@Talk01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  2.266667
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/Human@HandsClosed01.fbx",
+                      "name":  "Human@HandsClosed01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.333333343
+                  },
+                  {
+                      "path":  "Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/Human@ObjectGripHands01.fbx",
+                      "name":  "Human@ObjectGripHands01",
+                      "human":  true,
+                      "legacy":  false,
+                      "length":  0.333333343
+                  }
+              ],
+    "prefabs":  [
+                    {
+                        "path":  "Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Human Basic Motions/Prefabs/Human_BasicMotionsDummy_F.prefab",
+                        "animators":  [
+                                          {
+                                              "avatar":  "HumanF_ModelAvatar",
+                                              "valid":  true,
+                                              "human":  true,
+                                              "controller":  "null"
+                                          }
+                                      ]
+                    },
+                    {
+                        "path":  "Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Human Basic Motions/Prefabs/Human_BasicMotionsDummy_M.prefab",
+                        "animators":  [
+                                          {
+                                              "avatar":  "HumanM_ModelAvatar",
+                                              "valid":  true,
+                                              "human":  true,
+                                              "controller":  "null"
+                                          }
+                                      ]
+                    }
+                ]
+}

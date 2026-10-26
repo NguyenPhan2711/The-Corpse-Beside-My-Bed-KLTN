@@ -1,0 +1,23 @@
+{
+  "scene": "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+  "isDirty": false,
+  "playing": false,
+  "transforms": 725,
+  "audioSources": 26,
+  "activeCameras": 1,
+  "activeListeners": 1,
+  "truthLayers": [
+    {
+      "name": "Base Layer",
+      "defaultWeight": 0.0
+    },
+    {
+      "name": "HumanM@Talk01 upper body - weight 0",
+      "defaultWeight": 0.0
+    },
+    {
+      "name": "HumanM@Idle01 upper body - weight 0",
+      "defaultWeight": 0.0
+    }
+  ]
+}

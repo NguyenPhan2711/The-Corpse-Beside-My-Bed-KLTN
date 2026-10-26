@@ -1,0 +1,69 @@
+{
+  "scene": "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+  "sceneExists": true,
+  "editMode": true,
+  "sceneAssets": [
+    "Assets/Scenes/BedroomPrototype.unity",
+    "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+    "Assets/Scenes/SampleScene.unity"
+  ],
+  "flashlight": {
+    "batteryEnabled": true,
+    "maximumCharge": 100.0,
+    "drainPerSecond": 12.5,
+    "recoveryPerSecond": 5.0,
+    "minimumReactivationFraction": 0.2,
+    "lowBatteryFlicker": true,
+    "lowBatteryFraction": 0.15,
+    "feedbackAssigned": true,
+    "clipAssigned": false
+  },
+  "breath": {
+    "maximumCapacity": 100.0,
+    "maximumHoldSeconds": 5.0,
+    "recoverySeconds": 8.0,
+    "forcedGaspSeconds": 1.0,
+    "exhaustionLockoutSeconds": 1.5,
+    "inhaleSeconds": 0.2
+  },
+  "doorDurations": [
+    3.75,
+    3.65,
+    3.55
+  ],
+  "windowExposure": [
+    {
+      "resetExposureOnMiss": true,
+      "exposureDecayPerSecond": 2.0,
+      "requiredExposure": 0.8
+    },
+    {
+      "resetExposureOnMiss": true,
+      "exposureDecayPerSecond": 2.0,
+      "requiredExposure": 0.8
+    },
+    {
+      "resetExposureOnMiss": true,
+      "exposureDecayPerSecond": 2.0,
+      "requiredExposure": 0.8
+    }
+  ],
+  "controllers": {
+    "flashlights": 1,
+    "breath": 1,
+    "players": 1,
+    "interactors": 1,
+    "directors": 1,
+    "cameras": 1,
+    "listeners": 1
+  },
+  "missingScripts": 0,
+  "allEncountersEnabled": true,
+  "automaticScheduling": true,
+  "useFixedSeed": false,
+  "logScheduling": false,
+  "nightDuration": 180.0,
+  "truth": "(1.80, 0.00, 2.04)",
+  "corpse": "(-1.83, 0.69, 0.18)",
+  "audioClipAssets": 0
+}

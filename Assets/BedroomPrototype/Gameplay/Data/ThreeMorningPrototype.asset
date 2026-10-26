@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6744d86d8547dde4287bcb93686f99db, type: 3}
+  m_Name: ThreeMorningPrototype
+  m_EditorClassIdentifier: Assembly-CSharp::MorningContent
+  days:
+  - title: Morning 1
+    objectives:
+    - id: laptop
+      label: Read and reply to both laptop messages
+      required: 1
+    - id: truth
+      label: Finish the conversation with The Truth
+      required: 1
+    messages:
+    - id: class
+      sender: Class group - Morning 1
+      body: The seminar starts at ten. Are you coming today?
+      replies:
+      - I'll try to be there.
+      - Please send me the notes.
+    - id: friend
+      sender: A friend - Morning 1
+      body: You have been quiet. Can you let me know you're awake?
+      replies:
+      - I'm awake. Thank you.
+      - I need a little more time.
+    conversation:
+    - line: You answered them. Did it make the room any less quiet?
+      replies:
+      - It was a start.
+      - I don't know yet.
+    - line: You could leave the chair. I would still be here when you came back.
+      replies:
+      - Then I'll stand up.
+      - You sound very sure of that.
+    - line: The bed is waiting. This morning is yours to finish.
+      replies:
+      - I've done what I needed to.
+      - I'll decide when I'm ready.
+    laptopObjectiveId: laptop
+    truthObjectiveId: truth
+  - title: Morning 2
+    objectives:
+    - id: laptop
+      label: Read and reply to both laptop messages
+      required: 1
+    - id: truth
+      label: Finish the conversation with The Truth
+      required: 1
+    messages:
+    - id: class
+      sender: Class group - Morning 2
+      body: We saved you a seat yesterday. Do you want the notes?
+      replies:
+      - I'll try to be there.
+      - Please send me the notes.
+    - id: friend
+      sender: A friend - Morning 2
+      body: I can stop by after class, if you want company.
+      replies:
+      - I'm awake. Thank you.
+      - I need a little more time.
+    conversation:
+    - line: You answered them. Did it make the room any less quiet?
+      replies:
+      - It was a start.
+      - I don't know yet.
+    - line: You could leave the chair. I would still be here when you came back.
+      replies:
+      - Then I'll stand up.
+      - You sound very sure of that.
+    - line: The bed is waiting. This morning is yours to finish.
+      replies:
+      - I've done what I needed to.
+      - I'll decide when I'm ready.
+    laptopObjectiveId: laptop
+    truthObjectiveId: truth
+  - title: Morning 3
+    objectives:
+    - id: laptop
+      label: Read and reply to both laptop messages
+      required: 1
+    - id: truth
+      label: Finish the conversation with The Truth
+      required: 1
+    messages:
+    - id: class
+      sender: Class group - Morning 3
+      body: Your presentation slot is still open. Should we keep it?
+      replies:
+      - I'll try to be there.
+      - Please send me the notes.
+    - id: friend
+      sender: A friend - Morning 3
+      body: We can talk whenever you're ready. No explanation needed.
+      replies:
+      - I'm awake. Thank you.
+      - I need a little more time.
+    conversation:
+    - line: You answered them. Did it make the room any less quiet?
+      replies:
+      - It was a start.
+      - I don't know yet.
+    - line: You could leave the chair. I would still be here when you came back.
+      replies:
+      - Then I'll stand up.
+      - You sound very sure of that.
+    - line: The bed is waiting. This morning is yours to finish.
+      replies:
+      - I've done what I needed to.
+      - I'll decide when I'm ready.
+    laptopObjectiveId: laptop
+    truthObjectiveId: truth

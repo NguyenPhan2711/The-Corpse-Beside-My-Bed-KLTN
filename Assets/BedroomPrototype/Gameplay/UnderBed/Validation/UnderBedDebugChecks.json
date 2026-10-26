@@ -1,0 +1,20 @@
+{
+    "finished": true,
+    "passed": true,
+    "error": "",
+    "checks": [
+        "PASS: development overlay defaults hidden and is excluded from ordinary release gameplay",
+        "PASS: lighting recreates a nonserialized material block during an active blend",
+        "PASS: F3 reveals the live state and timer overlay",
+        "PASS: debug Force button starts the existing encounter",
+        "PASS: debug Reset button hides and resets the monster",
+        "PASS: debug disable prevents forced attacks",
+        "PASS: debug enable restores encounter scheduling",
+        "PASS: explicit debug controls remain accessible over the covered prototype view",
+        "PASS: closing debug retains the blanket's separate camera lock",
+        "PASS: releasing blanket clears only its own observation lock",
+        "PASS: debug can be open when a night ends",
+        "PASS: night loss closes development debug UI",
+        "PASS: retry does not reopen debug or leave its camera lock behind"
+    ]
+}

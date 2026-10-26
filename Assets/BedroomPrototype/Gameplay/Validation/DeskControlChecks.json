@@ -1,0 +1,16 @@
+{
+    "finished": true,
+    "passed": true,
+    "error": "",
+    "checks": [
+        "PASS: seated control check starts at morning anchor",
+        "PASS: new Input System seated mouse-look rotates camera",
+        "PASS: seated look clamps pitch and yaw",
+        "PASS: W does not move seated player",
+        "PASS: laptop releases cursor for reply buttons",
+        "PASS: UI graphic raycaster reaches visible reply button",
+        "PASS: Escape closes laptop without leaving desk",
+        "PASS: closing laptop recaptures cursor",
+        "PASS: Escape outside dialogue safely stands up"
+    ]
+}

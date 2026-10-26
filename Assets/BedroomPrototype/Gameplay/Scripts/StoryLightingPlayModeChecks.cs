@@ -1,0 +1,137 @@
+#if UNITY_EDITOR
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+
+// Explicitly spawned for Editor validation only; never saved to the scene or included in a build.
+public sealed class StoryLightingPlayModeChecks : MonoBehaviour
+{
+    [Serializable] public class Report { public bool finished, passed; public string error; public List<string> checks = new List<string>(); }
+    public Report report = new Report();
+    BedroomPhaseController phase;
+    TimeOfDayLightingController lighting;
+    Keyboard keyboard;
+    InputSettings originalInputSettings, testInputSettings;
+    float originalBlend, originalNight;
+    IEnumerator Start()
+    {
+        phase = FindAnyObjectByType<BedroomPhaseController>(); lighting = phase.timeOfDayLighting;
+        originalBlend = lighting.transitionSeconds; originalNight = phase.night.nightDurationSeconds;
+        originalInputSettings = InputSystem.settings;
+        testInputSettings = Instantiate(originalInputSettings);
+        testInputSettings.editorInputBehaviorInPlayMode = InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+        testInputSettings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
+        InputSystem.settings = testInputSettings;
+        lighting.transitionSeconds = .12f; phase.night.nightDurationSeconds = 1.5f;
+        keyboard = InputSystem.AddDevice<Keyboard>("StoryLightingVerification");
+        var runner = Run();
+        while (true)
+        {
+            bool more = false; object current = null;
+            try { more = runner.MoveNext(); if (more) current = runner.Current; }
+            catch (Exception ex) { report.error = ex.ToString(); break; }
+            if (!more) break;
+            yield return current;
+        }
+        InputSystem.RemoveDevice(keyboard); lighting.transitionSeconds = originalBlend; phase.night.nightDurationSeconds = originalNight;
+        RestoreInputSettings();
+        report.finished = true; report.passed = string.IsNullOrEmpty(report.error);
+        File.WriteAllText("Temp/BedroomPrototype/StoryLightingChecks.json", JsonUtility.ToJson(report, true));
+        Debug.Log("Story lighting verification: " + (report.passed ? "PASS" : "FAIL - " + report.error));
+    }
+    void RestoreInputSettings() { if (originalInputSettings != null && InputSystem.settings == testInputSettings) InputSystem.settings = originalInputSettings; if (testInputSettings != null) Destroy(testInputSettings); }
+    void OnDestroy() { RestoreInputSettings(); }
+    void Check(bool condition, string name) { report.checks.Add((condition ? "PASS: " : "FAIL: ") + name); if (!condition) throw new Exception(name); }
+    IEnumerator Wait(Func<bool> condition, float seconds = 5) { float end = Time.realtimeSinceStartup + seconds; while (!condition() && Time.realtimeSinceStartup < end) yield return null; }
+    IEnumerator PressE()
+    {
+        InputSystem.QueueStateEvent(keyboard, new KeyboardState(Key.E)); yield return null; yield return null;
+        InputSystem.QueueStateEvent(keyboard, new KeyboardState()); yield return null;
+    }
+    void AimSwitch()
+    {
+        phase.capsule.enabled = false; phase.movement.transform.position = new Vector3(.9f, .03f, -1.4f); phase.capsule.enabled = true;
+        phase.ReleaseCursor(); phase.view.transform.LookAt(phase.ceilingSwitch.transform.position); Physics.SyncTransforms(); phase.interactor.RefreshTarget();
+    }
+    void Reply()
+    {
+        phase.ui.ActiveButtonRoot.GetComponentsInChildren<UnityEngine.UI.Button>().First(b => b.gameObject.activeSelf && b != phase.ui.buttonTemplate).onClick.Invoke();
+    }
+    IEnumerator Picture(string name)
+    {
+        yield return new WaitForEndOfFrame();
+        var image = ScreenCapture.CaptureScreenshotAsTexture(); File.WriteAllBytes("Temp/BedroomPrototype/" + name + ".png", image.EncodeToPNG()); Destroy(image);
+    }
+    IEnumerator Run()
+    {
+        yield return null;
+        var bed = GameObject.Find("Bed").GetComponent<BedroomInteractable>();
+        Check(lighting.CurrentStage == StoryTimeOfDay.Morning && !phase.ceilingSwitch.IsOn, "day starts with daylight and ceiling off");
+        Check(lighting.windowDaylight.lightmapBakeType == LightmapBakeType.Realtime && phase.ceilingSwitch.ceilingLight.lightmapBakeType == LightmapBakeType.Realtime, "dynamic sources are realtime");
+        Check(bed.GetPrompt(phase.interactor) == "I'm not sleepy yet." && !phase.GoToBed(), "incomplete narrative gives natural thought and blocks bed");
+        AimSwitch(); Check(phase.interactor.CurrentPrompt == "[E] Turn on light", "physical switch is raycastable within interaction range");
+        yield return PressE(); Check(phase.ceilingSwitch.IsOn && phase.ceilingSwitch.ceilingLight.enabled, "E turns ceiling light on");
+        yield return PressE(); Check(!phase.ceilingSwitch.IsOn && !phase.ceilingSwitch.ceilingLight.enabled, "E turns ceiling light back off");
+        Check(lighting.CurrentStage == StoryTimeOfDay.Morning && lighting.MilestoneCount == 0, "manual lamp toggles do not advance time");
+        phase.SitAtDesk(); yield return Wait(() => phase.State == BedroomPhase.MorningDesk && !phase.IsTransitioning);
+        for (int i = 0; i < 3; i++) { phase.ui.OpenLaptop(); yield return null; phase.ui.CloseModal(); yield return null; }
+        Check(lighting.MilestoneCount == 0 && lighting.CurrentStage == StoryTimeOfDay.Morning, "opening and closing laptop earns no time progress");
+        yield return Picture("StoryMorning");
+        phase.ui.OpenLaptop(); Reply(); yield return null;
+        Check(lighting.CurrentStage == StoryTimeOfDay.Afternoon && lighting.MilestoneCount == 1, "one actual laptop reply advances toward afternoon");
+        int choices = phase.tasks.Choices.Count;
+        Check(!phase.tasks.ReplyToMessage("class", 0), "duplicate reply rejected");
+        lighting.ReevaluateMilestones(); lighting.ReevaluateMilestones();
+        Check(lighting.MilestoneCount == 1 && phase.tasks.Choices.Count == choices, "duplicate progress notifications count each milestone once");
+        phase.ui.CloseModal(); yield return Wait(() => !lighting.IsBlending); yield return Picture("StoryAfternoon");
+        phase.ui.OpenTruth(); Reply(); yield return null; Reply(); yield return null;
+        Check(lighting.CurrentStage == StoryTimeOfDay.Evening && !phase.tasks.BedUnlocked, "conversation replies reach evening before all objectives complete");
+        Check(phase.ceilingSwitch.IsOn, "ceiling becomes the evening interior light");
+        Reply(); yield return null; phase.ui.CloseModal();
+        Check(!phase.tasks.BedUnlocked && lighting.CurrentStage == StoryTimeOfDay.Evening, "remaining laptop reply still required in mixed completion order");
+        yield return Wait(() => !lighting.IsBlending); yield return Picture("StoryEvening");
+        phase.ceilingSwitch.SetLight(false);
+        phase.ui.OpenLaptop(); Reply(); yield return null; phase.ui.CloseModal();
+        Check(phase.tasks.BedUnlocked && lighting.CurrentStage == StoryTimeOfDay.LateEvening, "all required objectives reach late evening regardless of event order");
+        Check(phase.ceilingSwitch.IsOn, "late evening forces lamp on even if switched off earlier");
+        yield return Wait(() => !lighting.IsBlending);
+        Check(lighting.windowDaylight.intensity < .2f && RenderSettings.ambientLight.maxColorComponent > 0, "late exterior is dark while ambient stays readable");
+        phase.StandUp(); yield return Wait(() => phase.State == BedroomPhase.MorningExploration && !phase.IsTransitioning);
+        Check(bed.GetPrompt(phase.interactor) == "I should turn off the light first." && !phase.GoToBed(), "finished story plus lamp on gives reminder and blocks direct night entry");
+        AimSwitch(); Check(phase.interactor.CurrentPrompt == "[E] Turn off light", "late evening switch offers turn-off prompt");
+        yield return PressE();
+        Check(!phase.ceilingSwitch.IsOn && !phase.ceilingSwitch.ceilingLight.enabled, "physical E switches main ceiling source off");
+        lighting.ReevaluateMilestones(); lighting.ReevaluateMilestones();
+        Check(!phase.ceilingSwitch.IsOn, "repeated story notifications never turn manually extinguished lamp back on");
+        Check(phase.State == BedroomPhase.MorningExploration && !phase.night.Running, "turning off lamp never starts night automatically");
+        Check(bed.GetPrompt(phase.interactor) == "[E] Go to bed" && phase.CanStartNight, "bed prompt immediately reflects both completed conditions");
+        Check(lighting.windowDaylight.enabled && RenderSettings.ambientLight.maxColorComponent > 0 && GameObject.Find("Laptop subtle glow").GetComponent<Light>().enabled, "ceiling off preserves moonlight ambient and laptop source");
+        yield return PressE(); Check(phase.ceilingSwitch.IsOn && !phase.CanStartNight, "turning lamp back on immediately re-locks bed");
+        yield return PressE();
+        phase.capsule.enabled = false; phase.movement.transform.position = new Vector3(.45f, .03f, .25f); phase.capsule.enabled = true;
+        phase.ReleaseCursor(); phase.view.transform.LookAt(new Vector3(-.4f, .64f, -.35f)); Physics.SyncTransforms(); phase.interactor.RefreshTarget();
+        Check(phase.interactor.CurrentPrompt == "[E] Go to bed", "actual bed raycast offers sleep after switching off");
+        yield return PressE(); yield return Wait(() => phase.State == BedroomPhase.NightGameplay && !phase.IsTransitioning);
+        Check(phase.State == BedroomPhase.NightGameplay && phase.night.Running && lighting.IsNight, "explicit E at bed starts existing night and clock");
+        Check(!phase.movement.enabled && !phase.capsule.enabled && !phase.ceilingSwitch.IsOn, "night remains stationary with lamp off");
+        Check(Vector3.Distance(phase.view.transform.position, phase.nightCameraAnchor.position) < .01f, "night uses existing head anchor and camera");
+        yield return Picture("StoryNight");
+        yield return Wait(() => phase.State == BedroomPhase.NightWon); phase.NextMorning();
+        yield return Wait(() => phase.State == BedroomPhase.MorningExploration && !phase.IsTransitioning);
+        Check(phase.tasks.CurrentDay == 2 && lighting.CurrentStage == StoryTimeOfDay.Morning && lighting.MilestoneCount == 0 && !phase.ceilingSwitch.IsOn, "next day resets narrative lighting and initial lamp state");
+        Check(phase.tasks.Choices.Count == 5 && !phase.tasks.BedUnlocked, "previous choices survive but new-day objectives reset");
+        phase.SitAtDesk(); yield return Wait(() => phase.State == BedroomPhase.MorningDesk && !phase.IsTransitioning);
+        lighting.enabled = false; lighting.enabled = true; lighting.enabled = false; lighting.enabled = true;
+        phase.ui.OpenTruth(); for (int i = 0; i < 3; i++) { Reply(); yield return null; } phase.ui.CloseModal();
+        Check(lighting.CurrentStage == StoryTimeOfDay.Evening && lighting.MilestoneCount == 3, "conversation-first order and re-subscription remain idempotent");
+        phase.ui.OpenLaptop(); for (int i = 0; i < 2; i++) { Reply(); yield return null; } phase.ui.CloseModal();
+        Check(lighting.CurrentStage == StoryTimeOfDay.LateEvening && lighting.MilestoneCount == 5 && phase.ceilingSwitch.IsOn, "opposite valid order reaches the same late-evening gate");
+    }
+}
+#endif
+

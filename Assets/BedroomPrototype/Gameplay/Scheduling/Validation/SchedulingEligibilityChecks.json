@@ -1,0 +1,10 @@
+{
+  "finished": true,
+  "passed": true,
+  "checks": [
+    "PASS: inactive window root is excluded on Night 2",
+    "PASS: Night 2 ignores Night-1-only forced tutorial and selects eligible window",
+    "PASS: inactive window root is excluded on Night 3",
+    "PASS: Night 3 ignores Night-1-only forced tutorial and selects eligible window"
+  ]
+}

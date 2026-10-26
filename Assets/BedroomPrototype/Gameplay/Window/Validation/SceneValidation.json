@@ -1,0 +1,58 @@
+{
+  "scene": "Assets/Scenes/BedroomPrototype_PlayerFigure.unity",
+  "sceneExists": true,
+  "playing": false,
+  "windowClosed": true,
+  "panePosition": "(0.00, 1.70, 2.81)",
+  "hinge": "(-0.96, 1.70, 2.85)",
+  "standingExit": "(0.09, 0.03, 1.77)",
+  "standingExitOverlaps": [],
+  "anchors": [
+    {
+      "name": "WindowHiddenPosition",
+      "position": "(-0.55, 0.60, 4.30)"
+    },
+    {
+      "name": "WindowApproachPosition",
+      "position": "(-0.55, 0.60, 3.65)"
+    },
+    {
+      "name": "WindowHeadPosition",
+      "position": "(-0.55, 0.60, 2.95)"
+    },
+    {
+      "name": "WindowRetreatPosition",
+      "position": "(-0.55, 0.60, 4.30)"
+    },
+    {
+      "name": "WindowAttackPosition",
+      "position": "(0.70, 1.63, -0.95)"
+    }
+  ],
+  "windowEnabled": true,
+  "doorEnabled": true,
+  "underBedEnabled": true,
+  "directorConnected": true,
+  "cameras": 1,
+  "listeners": 1,
+  "players": 1,
+  "nightManagers": 1,
+  "eventSystems": 1,
+  "missingScripts": 0,
+  "playerMovement": true,
+  "playerCollider": true,
+  "nightDuration": 180.0,
+  "nightConfigs": 3,
+  "configDelays": [
+    30.0,
+    28.0,
+    26.0
+  ],
+  "batteryMaximum": 100.0,
+  "batteryDrain": 8.0,
+  "avatarValid": true,
+  "rootMotion": false,
+  "truth": "(1.80, 0.00, 2.04)",
+  "corpse": "(-1.83, 0.69, 0.18)",
+  "audioClips": 0
+}
