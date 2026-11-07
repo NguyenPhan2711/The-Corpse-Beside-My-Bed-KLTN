@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: ThreatCues_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c7ca96b1d99ef1b4cb9ed3651af97728, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1771277070336
+    m_Localized: Something is under the bed. Return to bed to hide!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150720
+    m_Localized: The scraping has faded. You can release Space.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150721
+    m_Localized: Too soon. Uncover fully, then time a fresh hold.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150722
+    m_Localized: Something is scratching underneath the bed...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150723
+    m_Localized: Wait until it stops and faces you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150724
+    m_Localized: Stay calm. Uncover fully, then hold Space again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150725
+    m_Localized: It stopped. Hold Space now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345024
+    m_Localized: Keep holding Space. Wait for it to leave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345025
+    m_Localized: It is listening. Hold R to hold your breath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345026
+    m_Localized: Return to bed! Something is listening at the door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345027
+    m_Localized: The handle turns... Prepare to hold R.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345028
+    m_Localized: Footsteps fade. It is safe to breathe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345029
+    m_Localized: The banging stops. Silence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345030
+    m_Localized: 'Door: Approaching'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345031
+    m_Localized: 'Door: GentleKnocking'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345032
+    m_Localized: 'Door: AggressiveKnocking'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345033
+    m_Localized: 'Door: Attack'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345034
+    m_Localized: 'Aim at its FACE. F: flashlight.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345035
+    m_Localized: Tapping at the window...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345036
+    m_Localized: The window latch gives way...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345037
+    m_Localized: Something is leaning through the window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345038
+    m_Localized: It recoils. The window is still open.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345039
+    m_Localized: The open window invites it back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345040
+    m_Localized: The mattress shifts beside you...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345041
+    m_Localized: Look toward him. Hold Q to push yourself upright.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345042
+    m_Localized: Keep holding Q.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19503183769600
+    m_Localized: The footsteps walk away. The door stays shut.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19503322181632
+    m_Localized: The tapping stops.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

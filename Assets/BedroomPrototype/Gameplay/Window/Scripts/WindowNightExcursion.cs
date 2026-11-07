@@ -13,11 +13,11 @@ public sealed class WindowNightExcursion : MonoBehaviour, IInteractable
     {
         get
         {
-            if (phases.State != BedroomPhase.NightGameplay) return "Night gameplay is not active.";
-            if (phases.IsTransitioning) return "Player transition in progress.";
-            if (phases.PlayerState != NightPlayerState.InBed) return "Player is not in bed.";
-            if (!panel.IsWindowOpen) return "The window is closed.";
-            if (panel.HeadOccupiesOpening || monster.State != WindowMonsterState.Dormant) return "Repel the window monster first.";
+            if (phases.State != BedroomPhase.NightGameplay) return GameText.UI("reason.nightInactive");
+            if (phases.IsTransitioning) return GameText.UI("reason.transition");
+            if (phases.PlayerState != NightPlayerState.InBed) return GameText.UI("reason.notInBed");
+            if (!panel.IsWindowOpen) return GameText.UI("reason.windowClosed");
+            if (panel.HeadOccupiesOpening || monster.State != WindowMonsterState.Dormant) return GameText.UI("reason.repelWindow");
             return director.OperationBlockedReason(this);
         }
     }
@@ -25,12 +25,12 @@ public sealed class WindowNightExcursion : MonoBehaviour, IInteractable
     {
         get
         {
-            if (phases.PlayerState != NightPlayerState.OutOfBed) return "Player is not standing beside the bed.";
+            if (phases.PlayerState != NightPlayerState.OutOfBed) return GameText.UI("reason.notStanding");
             return director.OperationBlockedReason(this, true);
         }
     }
     public bool CanLeave => LeaveBlockedReason.Length == 0;
-    public string GetPrompt(PlayerInteractor actor) => CanLeave ? "[E] Get out of bed" : panel.IsWindowOpen ? LeaveBlockedReason : "";
+    public string GetPrompt(PlayerInteractor actor) => CanLeave ? GameText.UI("prompt.getOutOfBed") : panel.IsWindowOpen ? LeaveBlockedReason : "";
     public bool CanInteract(PlayerInteractor actor) => CanLeave;
     public void Interact(PlayerInteractor actor) { TryLeaveBed(); }
     public bool TryLeaveBed()

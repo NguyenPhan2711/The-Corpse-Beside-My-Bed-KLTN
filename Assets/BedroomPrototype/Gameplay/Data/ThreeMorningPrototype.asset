@@ -17,107 +17,608 @@ MonoBehaviour:
     objectives:
     - id: laptop
       label: Read and reply to both laptop messages
+      localizedLabel:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053759250432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       required: 1
     - id: truth
       label: Finish the conversation with The Truth
+      localizedLabel:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053834747904
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       required: 1
     messages:
     - id: class
       sender: Class group - Morning 1
+      localizedSender:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942208
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       body: The seminar starts at ten. Are you coming today?
+      localizedBody:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942209
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I'll try to be there.
       - Please send me the notes.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942210
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942211
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - id: friend
       sender: A friend - Morning 1
+      localizedSender:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942212
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       body: You have been quiet. Can you let me know you're awake?
+      localizedBody:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942213
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I'm awake. Thank you.
       - I need a little more time.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942214
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942215
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     conversation:
     - line: You answered them. Did it make the room any less quiet?
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942216
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - It was a start.
       - I don't know yet.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942217
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942218
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - line: You could leave the chair. I would still be here when you came back.
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942219
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - Then I'll stand up.
       - You sound very sure of that.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942220
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942221
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - line: The bed is waiting. This morning is yours to finish.
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942222
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I've done what I needed to.
       - I'll decide when I'm ready.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942223
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942224
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     laptopObjectiveId: laptop
     truthObjectiveId: truth
   - title: Morning 2
     objectives:
     - id: laptop
       label: Read and reply to both laptop messages
+      localizedLabel:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942225
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       required: 1
     - id: truth
       label: Finish the conversation with The Truth
+      localizedLabel:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942226
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       required: 1
     messages:
     - id: class
       sender: Class group - Morning 2
+      localizedSender:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942227
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       body: We saved you a seat yesterday. Do you want the notes?
+      localizedBody:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942228
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I'll try to be there.
       - Please send me the notes.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942229
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942230
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - id: friend
       sender: A friend - Morning 2
+      localizedSender:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942231
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       body: I can stop by after class, if you want company.
+      localizedBody:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942232
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I'm awake. Thank you.
       - I need a little more time.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942233
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942234
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     conversation:
     - line: You answered them. Did it make the room any less quiet?
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942235
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - It was a start.
       - I don't know yet.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942236
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942237
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - line: You could leave the chair. I would still be here when you came back.
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942238
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - Then I'll stand up.
       - You sound very sure of that.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942239
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942240
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - line: The bed is waiting. This morning is yours to finish.
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942241
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I've done what I needed to.
       - I'll decide when I'm ready.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942242
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942243
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     laptopObjectiveId: laptop
     truthObjectiveId: truth
   - title: Morning 3
     objectives:
     - id: laptop
       label: Read and reply to both laptop messages
+      localizedLabel:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942244
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       required: 1
     - id: truth
       label: Finish the conversation with The Truth
+      localizedLabel:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942245
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       required: 1
     messages:
     - id: class
       sender: Class group - Morning 3
+      localizedSender:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942246
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       body: Your presentation slot is still open. Should we keep it?
+      localizedBody:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053838942247
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I'll try to be there.
       - Please send me the notes.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136512
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136513
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - id: friend
       sender: A friend - Morning 3
+      localizedSender:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136514
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       body: We can talk whenever you're ready. No explanation needed.
+      localizedBody:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136515
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I'm awake. Thank you.
       - I need a little more time.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136516
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136517
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     conversation:
     - line: You answered them. Did it make the room any less quiet?
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136518
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - It was a start.
       - I don't know yet.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136519
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136520
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - line: You could leave the chair. I would still be here when you came back.
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136521
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - Then I'll stand up.
       - You sound very sure of that.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136522
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136523
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     - line: The bed is waiting. This morning is yours to finish.
+      localizedLine:
+        m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136524
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       replies:
       - I've done what I needed to.
       - I'll decide when I'm ready.
+      localizedReplies:
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136525
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      - m_TableReference:
+          m_TableCollectionName: GUID:53ae1a046ddfae24e8cdd286fbf75766
+        m_TableEntryReference:
+          m_KeyId: 2053843136526
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
     laptopObjectiveId: laptop
     truthObjectiveId: truth
+  references:
+    version: 2
+    RefIds: []

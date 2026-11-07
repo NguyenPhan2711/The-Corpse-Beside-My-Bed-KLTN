@@ -16,7 +16,7 @@ public sealed class RoomLightSwitch : MonoBehaviour, IInteractable
     public string GetPrompt(PlayerInteractor actor)
     {
         if (phases.State != BedroomPhase.MorningExploration) return "";
-        return isOn ? "[E] Turn off light" : "[E] Turn on light";
+        return isOn ? GameText.UI("prompt.lightOff") : GameText.UI("prompt.lightOn");
     }
     public bool CanInteract(PlayerInteractor actor) => phases.State == BedroomPhase.MorningExploration && !phases.IsTransitioning && !phases.ui.ModalOpen;
     public void Interact(PlayerInteractor actor) { if (CanInteract(actor)) SetLight(!isOn); }

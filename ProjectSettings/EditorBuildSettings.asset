@@ -6,7 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: ef70dee91af3c4144b27ba4d02056c68
+  - enabled: 1
+    path: Assets/Scenes/BedroomPrototype_PlayerFigure.unity
+    guid: a32f18683b5c5a24eab200bb42171b24
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: f8d24b22a572cea4e8bf674700103e2f, type: 2}
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: 998f8382d413d5c4cbbbd1acc3f92765, type: 2}

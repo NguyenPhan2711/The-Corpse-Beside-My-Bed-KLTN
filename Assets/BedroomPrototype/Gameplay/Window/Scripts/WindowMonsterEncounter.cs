@@ -1,5 +1,5 @@
 using UnityEngine;
-public enum WindowMonsterState { Dormant,Knocking,Opening,HeadEmerging,AttackWarning,Retreat,Attack,SilentApproaching }
+public enum WindowMonsterState { Dormant,Knocking,Opening,HeadEmerging,AttackWarning,Retreat,Attack,SilentApproaching,FakeOut }
 [DefaultExecutionOrder(35)]
 public sealed class WindowMonsterEncounter : MonoBehaviour
 {
@@ -13,7 +13,8 @@ public sealed class WindowMonsterEncounter : MonoBehaviour
  public WindowMonsterState State {get;private set;}public float StateElapsed {get;private set;}public float Exposure {get;private set;}
  public bool SilentEncounter {get;private set;}
  public float RemainingDormant=>Mathf.Max(0,dormant);
- public float ReactionWindow=>SilentEncounter?Mathf.Max(Config.requiredExposure+.5f,Config.silentReactionWindow):Mathf.Max(Config.requiredExposure+.5f,Config.reactionWindow);
+ public float ReactionWindow=>(SilentEncounter?Mathf.Max(Config.requiredExposure+.5f,Config.silentReactionWindow):Mathf.Max(Config.requiredExposure+.5f,Config.reactionWindow))+director.ConcurrentDefenseGrace(this);
+ public bool FakeOut {get;private set;}
  public int QuietKnockCalls {get;private set;} public int AggressiveKnockCalls {get;private set;} public int OpeningSoundCalls {get;private set;} public int ListeningSoundCalls {get;private set;}
  public int SuccessfulDefenses {get;private set;}public int FailedDefenses {get;private set;}
  public float RemainingReaction=>State==WindowMonsterState.AttackWarning?Mathf.Max(0,ReactionWindow-StateElapsed):0;
@@ -33,7 +34,7 @@ public sealed class WindowMonsterEncounter : MonoBehaviour
  {
   if(state==NightPlayerState.InBed){LogDiagnostic("bed scheduling resumed; cooldown preserved");return;}
   bool pending=director.HasPending(this);director.CancelRequest(this);Exposure=0;
-  if(State!=WindowMonsterState.Dormant){float remaining=dormant;ResetEncounter();dormant=Mathf.Max(remaining,Config.successCooldown);}
+  if(State!=WindowMonsterState.Dormant){float remaining=dormant;ResetEncounter();dormant=Mathf.Max(remaining,Config.successCooldownRange.x);}
   LogDiagnostic(pending?"pending encounter canceled/deferred":"spawning deferred outside bed");
  }
  void LogDiagnostic(string reason){if(logDiagnostics&&(Application.isEditor||Debug.isDebugBuild))Debug.Log("[Window] "+reason+" | Encounter="+State+" | Player="+phases.PlayerState+" | Spawn="+CanSpawn+" | FlashDetection="+FlashlightDetectionEnabled+" | Open="+panel.IsWindowOpen+" | Danger="+DangerMultiplier.ToString("F1"));}
@@ -68,7 +69,10 @@ public sealed class WindowMonsterEncounter : MonoBehaviour
    case WindowMonsterState.Knocking:
     float length=Mathf.Max(Config.minimumKnocking,Config.knockingDuration*warningScale);float k=Mathf.Clamp01(StateElapsed/Mathf.Max(.01f,length));panel.Rattle(StateElapsed,k);
     if(StateElapsed>=nextKnock&&!quietSource.isPlaying&&!aggressiveSource.isPlaying){var source=k<.55f?quietSource:aggressiveSource;source.volume=Mathf.Lerp(Config.quietKnockVolume,Config.aggressiveKnockVolume,k);var clip=k<.55f?Config.quietKnock:Config.aggressiveKnock;if(k<.55f)QuietKnockCalls++;else AggressiveKnockCalls++;Play(source,clip);knockCount++;nextKnock=StateElapsed+(clip?clip.length/Mathf.Max(.01f,Mathf.Abs(source.pitch)):0)+Mathf.Max(0,Mathf.Lerp(Config.knockPauseStart,Config.knockPauseEnd,k));}
-    if(StateElapsed>=length){panel.ResetLatch();Change(WindowMonsterState.Opening);}break;
+    if(StateElapsed>=length){panel.ResetLatch();Change(FakeOut?WindowMonsterState.FakeOut:WindowMonsterState.Opening);}break;
+   case WindowMonsterState.FakeOut:
+    // The tapping stops and nothing opens; still a full encounter for pacing and cooldown.
+    if(StateElapsed>=Config.fakeOutSilence)Finish();break;
    case WindowMonsterState.Opening:
     visual.gameObject.SetActive(true);visual.SetPositionAndRotation(approachPosition.position,approachPosition.rotation);
     if(!panel.IsWindowOpen)panel.SetOpenAmount(Mathf.Clamp01(StateElapsed/Mathf.Max(.01f,Config.openingDuration)));
@@ -86,18 +90,18 @@ public sealed class WindowMonsterEncounter : MonoBehaviour
   }
  }
  void LateUpdate(){if(!NightActive||!visual.gameObject.activeSelf)return;breathingSource.transform.position=head.position;upperChest.localRotation=chestRest*Quaternion.Euler(35,0,0);if(State==WindowMonsterState.HeadEmerging||State==WindowMonsterState.AttackWarning)head.rotation=Quaternion.Slerp(head.rotation,Quaternion.LookRotation(phases.view.transform.position-head.position,Vector3.up),Time.deltaTime*5);}
- bool TryBegin(bool forced){if(!Application.isPlaying||!CanSpawn||!encountersEnabled||!Config.encounterEnabled||State!=WindowMonsterState.Dormant||panel.IsAnimating)return false;bool allowed=forced?director.TryAcquire(this):director.RequestScheduled(this,DangerMultiplier);if(!allowed)return false;leased=true;session=true;warningScale=1-Mathf.Clamp01((DangerMultiplier-1)/Mathf.Max(.01f,Config.maximumOpenMultiplier-1))*.25f;SilentEncounter=panel.IsWindowOpen;StopAudio();if(SilentEncounter){visual.gameObject.SetActive(true);visual.SetPositionAndRotation(hiddenPosition.position,hiddenPosition.rotation);Change(WindowMonsterState.SilentApproaching);}else Change(WindowMonsterState.Knocking);return true;}
+ bool TryBegin(bool forced){if(!Application.isPlaying||!CanSpawn||!encountersEnabled||!Config.encounterEnabled||State!=WindowMonsterState.Dormant||panel.IsAnimating)return false;bool allowed=forced?director.TryAcquire(this):director.RequestScheduled(this,DangerMultiplier);if(!allowed)return false;leased=true;session=true;warningScale=1-Mathf.Clamp01((DangerMultiplier-1)/Mathf.Max(.01f,Config.maximumOpenMultiplier-1))*.25f;SilentEncounter=panel.IsWindowOpen;FakeOut=!SilentEncounter&&director.RollChance(Config.fakeOutChance);StopAudio();if(SilentEncounter){visual.gameObject.SetActive(true);visual.SetPositionAndRotation(hiddenPosition.position,hiddenPosition.rotation);Change(WindowMonsterState.SilentApproaching);}else Change(WindowMonsterState.Knocking);return true;}
  public bool ForceStartEncounter()=>TryBegin(true);
  [ContextMenu("Force window encounter (night Play mode)")]void ForceMenu(){ForceStartEncounter();}
  public void ForceRetreat(){if(!NightActive||State==WindowMonsterState.Dormant)return;BeginRetreat();}
  void BeginRetreat(){retreatStart=visual.position;Change(WindowMonsterState.Retreat);}
  void Fail(){FailedDefenses++;if(Config.logResults)Debug.Log("Window defense failed: face not illuminated continuously");attackStart=visual.position;attackRotation=Quaternion.LookRotation(-phases.view.transform.forward,Vector3.up);attackGoal=attackPosition.position-attackRotation*visual.InverseTransformPoint(head.position);phases.SetObservationLock(this,true);Change(WindowMonsterState.Attack);}
- void Finish(){Release();Hide();panel.HeadOccupiesOpening=false;Change(WindowMonsterState.Dormant);dormant=Config.successCooldown;phases.SetObservationLock(this,false);}
+ void Finish(){Release();Hide();panel.HeadOccupiesOpening=false;Change(WindowMonsterState.Dormant);dormant=director.SampleCooldown(Config.successCooldownRange);FakeOut=false;phases.SetObservationLock(this,false);}
  void Release(){if(director){director.CancelRequest(this);if(leased)director.Release(this);}leased=false;}
  void Hide(){if(visual){visual.gameObject.SetActive(false);visual.SetPositionAndRotation(hiddenPosition.position,hiddenPosition.rotation);}if(faceTarget)faceTarget.enabled=true;}
- public void ResetEncounter(){Release();StopAudio();State=WindowMonsterState.Dormant;StateElapsed=Exposure=0;dormant=0;SilentEncounter=false;Hide();if(head)head.localRotation=headRest;if(upperChest)upperChest.localRotation=chestRest;if(panel){panel.HeadOccupiesOpening=false;panel.ResetLatch();}if(phases)phases.SetObservationLock(this,false);}
+ public void ResetEncounter(){Release();StopAudio();State=WindowMonsterState.Dormant;StateElapsed=Exposure=0;dormant=0;SilentEncounter=FakeOut=false;Hide();if(head)head.localRotation=headRest;if(upperChest)upperChest.localRotation=chestRest;if(panel){panel.HeadOccupiesOpening=false;panel.ResetLatch();}if(phases)phases.SetObservationLock(this,false);}
  public void SetEncountersEnabled(bool value){encountersEnabled=value;if(!value)ResetEncounter();}
- public string Cue=>!NightActive||!Config.textCues||(SilentEncounter&&State!=WindowMonsterState.Dormant&&!Config.showSilentAttackDebugCue)?"":State==WindowMonsterState.AttackWarning?"Aim at its FACE. F: flashlight.":State==WindowMonsterState.Knocking?"Tapping at the window...":State==WindowMonsterState.Opening?"The window latch gives way...":State==WindowMonsterState.HeadEmerging?"Something is leaning through the window.":State==WindowMonsterState.Retreat?"It recoils. The window is still open.":panel.IsWindowOpen?"The open window invites it back.":"";
+ public string Cue=>!NightActive||!director.CuesVisible(Config.textCues)||(SilentEncounter&&State!=WindowMonsterState.Dormant&&!Config.showSilentAttackDebugCue)?"":State==WindowMonsterState.FakeOut?GameText.Cue("window.fakeOut"):State==WindowMonsterState.AttackWarning?GameText.Cue("window.aim"):State==WindowMonsterState.Knocking?GameText.Cue("window.knocking"):State==WindowMonsterState.Opening?GameText.Cue("window.opening"):State==WindowMonsterState.HeadEmerging?GameText.Cue("window.emerging"):State==WindowMonsterState.Retreat?GameText.Cue("window.retreat"):panel.IsWindowOpen?GameText.Cue("window.open"):"";
 }
 
 

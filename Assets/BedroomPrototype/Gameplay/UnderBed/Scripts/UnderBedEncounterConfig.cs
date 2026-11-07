@@ -13,6 +13,7 @@ public sealed class UnderBedEncounterConfig : ScriptableObject
     [Min(.1f)] public float requiredHidingDuration = 3;
     [Min(.1f)] public float retreatDuration = 2;
     public Vector2 cooldownRange = new Vector2(15, 25);
+    [Range(0, 1), Tooltip("Chance the scratching stops and nothing emerges.")] public float fakeOutChance;
     [Min(.1f)] public float attackDuration = .5f;
     [Min(.01f)] public float headTurnDuration = .3f;
     [Min(.1f)] public float directorRetryDelay = 1;

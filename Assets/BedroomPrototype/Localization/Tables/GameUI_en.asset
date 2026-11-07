@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: GameUI_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 66264a7053b28ed45857db33d90fa99f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1771696500736
+    m_Localized: '[E] Sit at desk'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969728
+    m_Localized: '[E] Interact with laptop'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969729
+    m_Localized: '[E] Talk to The Truth'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969730
+    m_Localized: '[E] Return to bed'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969731
+    m_Localized: I'm not sleepy yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969732
+    m_Localized: '[E] Go to bed'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969733
+    m_Localized: I should turn off the light first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969734
+    m_Localized: '[E] Get out of bed'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969735
+    m_Localized: '[E] Close window'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969736
+    m_Localized: '[E] Turn off light'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969737
+    m_Localized: '[E] Turn on light'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969738
+    m_Localized: Night gameplay is not active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969739
+    m_Localized: Player transition in progress.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969740
+    m_Localized: Player is not in bed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969741
+    m_Localized: The window is closed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969742
+    m_Localized: Repel the window monster first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969743
+    m_Localized: Player is not standing beside the bed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164032
+    m_Localized: Get out of bed first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164033
+    m_Localized: Window monster still occupies the opening.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164034
+    m_Localized: The window is still closing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164035
+    m_Localized: The window is already closed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164036
+    m_Localized: Return to bed and deal with the current threat first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164037
+    m_Localized: Finish resisting before getting up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164038
+    m_Localized: MORNING {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164039
+    m_Localized: 'Escape: stand up (close dialogue first)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164040
+    m_Localized: NIGHT {0}   {1}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164041
+    m_Localized: DAY {0} / 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164042
+    m_Localized: 12 AM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164043
+    m_Localized: 1 AM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164044
+    m_Localized: 2 AM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164045
+    m_Localized: 3 AM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164046
+    m_Localized: 4 AM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164047
+    m_Localized: 5 AM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164048
+    m_Localized: 6 AM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164049
+    m_Localized: PROTOTYPE LAPTOP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164050
+    m_Localized: PROTOTYPE LAPTOP - {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164051
+    m_Localized: All required messages have been read and replied to.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164052
+    m_Localized: The required conversation is finished. Your choices have been recorded.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164053
+    m_Localized: 6 AM - NIGHT SURVIVED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164054
+    m_Localized: NIGHT LOST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164055
+    m_Localized: 'Three-night prototype complete.
+
+      Your dialogue choices remain
+      in this session''s progression data.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164056
+    m_Localized: Morning {0} is ready.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164057
+    m_Localized: Something reached you before dawn.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164058
+    m_Localized: Retry night
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164059
+    m_Localized: Begin next morning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164060
+    m_Localized: Choose a reply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164061
+    m_Localized: Click / Enter - reveal text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164062
+    m_Localized: Click / Enter - continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164063
+    m_Localized: THE TRUTH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164064
+    m_Localized: PROTAGONIST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164065
+    m_Localized: NARRATION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164066
+    m_Localized: Tab - Skip introduction (already seen)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164067
+    m_Localized: 'Close [Escape]'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

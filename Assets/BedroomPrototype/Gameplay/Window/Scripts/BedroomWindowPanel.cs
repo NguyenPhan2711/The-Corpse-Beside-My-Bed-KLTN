@@ -23,12 +23,12 @@ public sealed class BedroomWindowPanel : MonoBehaviour
  {
   get
   {
-   if(phases.State!=BedroomPhase.NightGameplay)return "Night gameplay is not active.";
-   if(phases.IsTransitioning)return "Player transition in progress.";
-   if(phases.PlayerState!=NightPlayerState.OutOfBed)return "Get out of bed first.";
-   if(HeadOccupiesOpening)return "Window monster still occupies the opening.";
-   if(IsAnimating)return "The window is still closing.";
-   if(!IsWindowOpen)return "The window is already closed.";
+   if(phases.State!=BedroomPhase.NightGameplay)return GameText.UI("reason.nightInactive");
+   if(phases.IsTransitioning)return GameText.UI("reason.transition");
+   if(phases.PlayerState!=NightPlayerState.OutOfBed)return GameText.UI("reason.getOutFirst");
+   if(HeadOccupiesOpening)return GameText.UI("reason.windowOccupied");
+   if(IsAnimating)return GameText.UI("reason.windowClosing");
+   if(!IsWindowOpen)return GameText.UI("reason.windowAlreadyClosed");
    return director.OperationBlockedReason(this);
   }
  }

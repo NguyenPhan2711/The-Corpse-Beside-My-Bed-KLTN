@@ -22,10 +22,11 @@ MonoBehaviour:
   handleDuration: 0.5
   openingDuration: 2
   reactionGrace: 0.55
-  listeningDuration: 3
+  listeningDuration: 3.5
   retreatDuration: 3
   attackDuration: 0.7
-  cooldown: {x: 16, y: 26}
+  cooldown: {x: 12, y: 20}
+  fakeOutChance: 0.33
   openingAngle: 95
   distantFootsteps: {fileID: 0}
   approachingFootsteps: {fileID: 8300000, guid: de9f56dd28b0a304e90c94d88eac101b, type: 3}
@@ -49,5 +50,5 @@ MonoBehaviour:
   aggressivePauseStart: 0.3
   aggressivePauseEnd: 0.1
   loopFootsteps: 0
-  textCues: 1
+  textCues: 0
   logResults: 1

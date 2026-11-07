@@ -16,15 +16,16 @@ MonoBehaviour:
   initialDelay: 15
   scratchingDuration: 4
   emergingDuration: 5
-  reactionWindow: 1.75
+  reactionWindow: 3
   requiredHidingDuration: 3
   retreatDuration: 2
-  cooldownRange: {x: 15, y: 25}
+  cooldownRange: {x: 20, y: 30}
+  fakeOutChance: 0
   attackDuration: 0.5
   headTurnDuration: 0.3
   directorRetryDelay: 1
   earlyReleaseRule: 1
-  warningReactionWindow: 0.85
+  warningReactionWindow: 2
   showTextCues: 1
   logDefenses: 1
   scratching: {fileID: 8300000, guid: d665fb1ca2c6b2f488bdc8f06fe57f84, type: 3}

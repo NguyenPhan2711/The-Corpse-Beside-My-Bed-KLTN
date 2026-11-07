@@ -13,7 +13,7 @@ public sealed class CorpseEncounterController:MonoBehaviour
  public bool FacingCorpse=>Vector3.Angle(phases.view.transform.forward,head.position-phases.view.transform.position)<=config.gazeDegrees;
  public bool CanPauseForTravel=>State==CorpseEncounterState.Beckoning||State==CorpseEncounterState.Reaching;
  public bool IsPaused=>!BedAvailable;public bool InputActive=>resistAction.enabled;public bool RequiresRelease=>requireRelease;
- Vector3 bodyHome,mattressHome,surrenderStart,surrenderGoal;Quaternion bodyRotation,headHome,armHome;bool leased,requireRelease;float resistanceStartPull;
+ Vector3 bodyHome,mattressHome,surrenderStart,surrenderGoal;Quaternion bodyRotation,headHome,armHome;bool leased,requireRelease;float resistanceStartPull,pullGrace;
  void Awake(){bodyHome=bodyRoot.localPosition;bodyRotation=bodyRoot.localRotation;headHome=head.localRotation;armHome=reachingArm.localRotation;mattressHome=mattress.localPosition;}
  void OnEnable(){if(phases){phases.PhaseChanged+=PhaseChanged;phases.NightPlayerStateChanged+=PlayerStateChanged;phases.night.Began+=NewNight;}}
  void OnDisable(){if(phases){phases.PhaseChanged-=PhaseChanged;phases.NightPlayerStateChanged-=PlayerStateChanged;phases.night.Began-=NewNight;}ResetEncounter();}
@@ -27,7 +27,7 @@ public sealed class CorpseEncounterController:MonoBehaviour
  public bool ForceStartEncounter()=>Application.isPlaying&&Begin(true);public bool StartScheduledEncounter()=>Application.isPlaying&&Begin(false);
  void Update()
  {
-  if(cue){cue.gameObject.SetActive(BedAvailable&&State!=CorpseEncounterState.Dormant);cue.text=State==CorpseEncounterState.Beckoning?"The mattress shifts beside you...":State==CorpseEncounterState.Reaching?"Look toward him. Hold Q to push yourself upright.":State==CorpseEncounterState.Resisting?"Keep holding Q.":"";}
+  if(cue){cue.gameObject.SetActive(BedAvailable&&State!=CorpseEncounterState.Dormant&&director.CuesVisible(config.showTextCues));cue.text=State==CorpseEncounterState.Beckoning?GameText.Cue("corpse.beckoning"):State==CorpseEncounterState.Reaching?GameText.Cue("corpse.reaching"):State==CorpseEncounterState.Resisting?GameText.Cue("corpse.resisting"):"";}
   bool held=Keyboard.current!=null&&Keyboard.current.qKey.isPressed;if(!held)requireRelease=false;
   if(!encountersEnabled||!NightActive){if(State!=CorpseEncounterState.Dormant||CameraDrop>0)ResetEncounter();resistAction.Disable();return;}
   if(!BedAvailable){resistAction.Disable();CameraDrop=0;return;}
@@ -38,9 +38,10 @@ public sealed class CorpseEncounterController:MonoBehaviour
   {
    case CorpseEncounterState.Dormant:RemainingDormant=Mathf.Max(0,RemainingDormant-Time.deltaTime);break;
    case CorpseEncounterState.Beckoning:
-    if(StateElapsed>=config.beckoningSeconds&&director.TryBeginDefense(this)){director.BeginBedDefense(this);Change(CorpseEncounterState.Reaching);}break;
+    if(StateElapsed>=config.beckoningSeconds&&director.TryBeginDefense(this)){director.BeginBedDefense(this);Change(CorpseEncounterState.Reaching);pullGrace=director.ConcurrentDefenseGrace(this);}break;
    case CorpseEncounterState.Reaching:
     if(!requireRelease&&resistAction.IsPressed()&&FacingCorpse){Change(CorpseEncounterState.Resisting);break;}
+    if(pullGrace>0){pullGrace-=Time.deltaTime;break;} // Extra time when this pull started during another defense.
     PullProgress=Mathf.Clamp01(PullProgress+Time.deltaTime/Mathf.Max(.1f,config.reachingSeconds));if(PullProgress>=1)Change(CorpseEncounterState.Surrender);break;
    case CorpseEncounterState.Resisting:
     if(requireRelease||!resistAction.IsPressed()||!FacingCorpse){PullProgress=Mathf.Clamp01(resistanceStartPull+ResistanceProgress*config.resistanceSeconds/Mathf.Max(.1f,config.reachingSeconds));ResistanceProgress=0;Change(PullProgress>=1?CorpseEncounterState.Surrender:CorpseEncounterState.Reaching);break;}
@@ -68,7 +69,7 @@ public sealed class CorpseEncounterController:MonoBehaviour
  void RestoreBonePose(){if(head)head.localRotation=headHome;if(reachingArm)reachingArm.localRotation=armHome;if(mattress)mattress.localPosition=mattressHome;}
  void RestorePose(){if(bodyRoot){bodyRoot.localPosition=bodyHome;bodyRoot.localRotation=bodyRotation;}RestoreBonePose();}
  [ContextMenu("Reset corpse encounter")]
- public void ResetEncounter(){if(director){director.CancelRequest(this);if(leased)director.Release(this);}leased=false;State=CorpseEncounterState.Dormant;StateElapsed=PullProgress=ResistanceProgress=CameraDrop=0;resistAction.Disable();RestorePose();if(phases){phases.SetObservationLock(this,false);if(phases.ui)phases.ui.SetFade(0);}if(creakSource)creakSource.Stop();}
+ public void ResetEncounter(){if(director){director.CancelRequest(this);if(leased)director.Release(this);}leased=false;State=CorpseEncounterState.Dormant;StateElapsed=PullProgress=ResistanceProgress=CameraDrop=pullGrace=0;resistAction.Disable();RestorePose();if(phases){phases.SetObservationLock(this,false);if(phases.ui)phases.ui.SetFade(0);}if(creakSource)creakSource.Stop();}
 }
 
 

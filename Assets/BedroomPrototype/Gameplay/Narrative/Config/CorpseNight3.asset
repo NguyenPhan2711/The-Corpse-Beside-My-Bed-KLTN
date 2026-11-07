@@ -18,7 +18,7 @@ MonoBehaviour:
   resistanceSeconds: 1.75
   retreatSeconds: 1.2
   surrenderSeconds: 2.5
-  cooldown: {x: 20, y: 30}
+  cooldown: {x: 12, y: 20}
   gazeDegrees: 35
   maximumCameraDrop: 0.13
   cameraRecoverySpeed: 0.25
@@ -26,3 +26,4 @@ MonoBehaviour:
   warningYaw: 3
   mattressMotion: 0.004
   creak: {fileID: 0}
+  showTextCues: 0

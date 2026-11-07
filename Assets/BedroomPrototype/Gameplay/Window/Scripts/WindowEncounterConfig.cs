@@ -4,7 +4,10 @@ public sealed class WindowEncounterConfig : ScriptableObject
 {
  public bool encounterEnabled=true;
  [HideInInspector] public float initialDelay=30;
- [Min(.1f)] public float knockingDuration=5,openingDuration=2,emergingDuration=2,reactionWindow=2,requiredExposure=.8f,retreatDuration=1.5f,attackDuration=.6f,successCooldown=20,safeClosedCooldown=20;
+ [Min(.1f)] public float knockingDuration=5,openingDuration=2,emergingDuration=2,reactionWindow=2,requiredExposure=.8f,retreatDuration=1.5f,attackDuration=.6f,safeClosedCooldown=20;
+ [Tooltip("Sampled after a repelled attack or a fake-out.")] public Vector2 successCooldownRange=new Vector2(20,30);
+ [Range(0,1),Tooltip("Chance the tapping stops and nothing opens (closed window only).")] public float fakeOutChance;
+ [Min(.1f),Tooltip("Silence after a fake-out's tapping stops before the encounter ends.")] public float fakeOutSilence=1.5f;
  [Min(.1f)] public float minimumKnocking=3,minimumEmerging=1.4f;
  public float earlyOpenMultiplier=1.5f,middleOpenMultiplier=2,maximumOpenMultiplier=3,firstDangerThreshold=15,secondDangerThreshold=30;
  public AudioClip quietKnock,aggressiveKnock,latchRattle,opening,monsterBreathing,retreating,closing;

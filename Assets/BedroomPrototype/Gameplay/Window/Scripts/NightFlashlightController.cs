@@ -7,7 +7,10 @@ public sealed class NightFlashlightController : MonoBehaviour
     public InputAction toggleAction=new InputAction("Night flashlight",InputActionType.Button,"<Keyboard>/f");
     public bool batteryEnabled=true;
     [Min(1)]public float maximumCharge=100;
-    [Min(0)]public float drainPerSecond=12.5f,recoveryPerSecond=5;
+    [Min(0)]public float drainPerSecond=12.5f;
+    [Min(0),Tooltip("Fallback only. The current night's NightEncounterSchedule sets the recharge rate when the director is assigned.")]public float recoveryPerSecond=5;
+    public BedroomEncounterDirector director;
+    public float RechargePerSecond=>director&&director.CurrentSchedule?director.CurrentSchedule.flashlightRechargePerSecond:recoveryPerSecond;
     [Range(.01f,1)]public float minimumReactivationFraction=.2f;
     public bool lowBatteryFlicker=true;
     [Range(.01f,1)]public float lowBatteryFraction=.15f;
@@ -54,7 +57,7 @@ public sealed class NightFlashlightController : MonoBehaviour
         {
             // Switched-on drain continues under the blanket; covering cannot recharge an enabled torch.
             if(SwitchedOn){Charge=Mathf.Max(0,Charge-drainPerSecond*Time.deltaTime);if(Charge<=0)Deplete();}
-            else if(Charge<maximumCharge){Charge=Mathf.Min(maximumCharge,Charge+recoveryPerSecond*Time.deltaTime);IsRecharging=recoveryPerSecond>0;}
+            else if(Charge<maximumCharge){float recharge=RechargePerSecond;Charge=Mathf.Min(maximumCharge,Charge+recharge*Time.deltaTime);IsRecharging=recharge>0;}
             if(DepletedLockout&&Charge>=maximumCharge*minimumReactivationFraction)DepletedLockout=false;
         }
         if(!batteryEnabled)DepletedLockout=false;

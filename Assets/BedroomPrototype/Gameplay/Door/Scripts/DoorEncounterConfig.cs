@@ -6,6 +6,7 @@ public sealed class DoorEncounterConfig : ScriptableObject
  [HideInInspector] public float initialDelay=25;
  [Min(0)] public float footstepsDuration=5, approachSilence=.7f, gentleDuration=4, aggressiveDuration=5, silenceAfterBanging=1.1f, handleDuration=.5f, openingDuration=2, reactionGrace=.75f, listeningDuration=3, retreatDuration=3, attackDuration=.7f;
  public Vector2 cooldown=new Vector2(20,30);
+ [Range(0,1),Tooltip("Chance the knocking stops and footsteps walk away without the door opening.")] public float fakeOutChance;
  public float openingAngle=95;
  public AudioClip distantFootsteps, approachingFootsteps, gentleKnocking, aggressiveKnocking, handleTurning, doorCreaking, monsterListening, retreating, attacking;
  public AudioClip doorClosing;

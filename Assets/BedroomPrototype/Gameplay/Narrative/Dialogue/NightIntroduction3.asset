@@ -18,6 +18,15 @@ MonoBehaviour:
   lines:
   - speaker: TheTruth
     text: Well.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898572
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -34,6 +43,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Would you look at that.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898573
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -50,6 +68,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: He's been beside you this whole time.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898574
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -66,6 +93,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Even I thought you'd recognize him sooner.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898575
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: glass.fracture
     eventAfterLine: 1
@@ -82,6 +118,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Doesn't he look familiar?
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898576
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: glass.reveal
     eventAfterLine: 1
@@ -98,6 +143,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Don't look so surprised.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898577
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -114,6 +168,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: You've spent so much time thinking about becoming him.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898578
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -130,6 +193,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Here's the thing.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054317092864
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -146,6 +218,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: He doesn't want to be alone anymore.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054317092865
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -162,6 +243,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: If you feel yourself sinking toward him...
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054317092866
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -178,6 +268,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Look at him.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054317092867
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -194,6 +293,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Push yourself back up.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054317092868
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -210,6 +318,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Don't let him pull you down.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054317092869
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -226,6 +343,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Although...
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054317092870
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -242,6 +368,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Would it really be so terrible to rest?
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054317092871
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -256,3 +391,6 @@ MonoBehaviour:
       choiceEntry: 
       choiceReply: 
     choices: []
+  references:
+    version: 2
+    RefIds: []

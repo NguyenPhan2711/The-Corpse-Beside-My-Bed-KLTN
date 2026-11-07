@@ -26,6 +26,7 @@ MonoBehaviour:
   retreatDuration: 3
   attackDuration: 0.7
   cooldown: {x: 20, y: 30}
+  fakeOutChance: 0
   openingAngle: 95
   distantFootsteps: {fileID: 0}
   approachingFootsteps: {fileID: 8300000, guid: de9f56dd28b0a304e90c94d88eac101b, type: 3}

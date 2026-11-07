@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Dialogue Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Dialogue
+  m_TableCollectionNameGuidString: 307a777c1a3e2004bbee95f62ad7e4f4
+  m_Entries:
+  - m_Id: 2054229012480
+    m_Key: truth-night-1.line00
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704256
+    m_Key: truth-night-1.line01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704257
+    m_Key: truth-night-1.line02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704258
+    m_Key: truth-night-1.line03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704259
+    m_Key: truth-night-1.line04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704260
+    m_Key: truth-night-1.line05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704261
+    m_Key: truth-night-1.line06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704262
+    m_Key: truth-night-1.line07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704263
+    m_Key: truth-night-1.line08
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704264
+    m_Key: truth-night-1.line09
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704265
+    m_Key: truth-night-1.line10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704266
+    m_Key: truth-night-1.line11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704267
+    m_Key: truth-night-1.line12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704268
+    m_Key: truth-night-1.line13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704269
+    m_Key: truth-night-1.line14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704270
+    m_Key: truth-night-1.line15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704271
+    m_Key: truth-night-1.line16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898560
+    m_Key: truth-night-2.line00
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898561
+    m_Key: truth-night-2.line01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898562
+    m_Key: truth-night-2.line02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898563
+    m_Key: truth-night-2.line03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898564
+    m_Key: truth-night-2.line04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898565
+    m_Key: truth-night-2.line05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898566
+    m_Key: truth-night-2.line06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898567
+    m_Key: truth-night-2.line07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898568
+    m_Key: truth-night-2.line08
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898569
+    m_Key: truth-night-2.line09
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898570
+    m_Key: truth-night-2.line10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898571
+    m_Key: truth-night-2.line11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898572
+    m_Key: truth-night-3.line00
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898573
+    m_Key: truth-night-3.line01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898574
+    m_Key: truth-night-3.line02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898575
+    m_Key: truth-night-3.line03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898576
+    m_Key: truth-night-3.line04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898577
+    m_Key: truth-night-3.line05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898578
+    m_Key: truth-night-3.line06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092864
+    m_Key: truth-night-3.line07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092865
+    m_Key: truth-night-3.line08
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092866
+    m_Key: truth-night-3.line09
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092867
+    m_Key: truth-night-3.line10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092868
+    m_Key: truth-night-3.line11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092869
+    m_Key: truth-night-3.line12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092870
+    m_Key: truth-night-3.line13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092871
+    m_Key: truth-night-3.line14
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3677872542231560326
+  references:
+    version: 2
+    RefIds:
+    - rid: 3677872542231560326
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793205559558

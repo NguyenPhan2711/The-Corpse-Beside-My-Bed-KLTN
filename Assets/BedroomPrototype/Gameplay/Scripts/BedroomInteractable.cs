@@ -14,13 +14,13 @@ public sealed class BedroomInteractable : MonoBehaviour, IInteractable
     public BedroomPhaseController phases;
     public string GetPrompt(PlayerInteractor actor)
     {
-        if (action == Action.SitAtDesk) return phases.State == BedroomPhase.MorningExploration ? "[E] Sit at desk" : "";
-        if (action == Action.Laptop) return phases.State == BedroomPhase.MorningDesk ? "[E] Interact with laptop" : "";
-        if (action == Action.TalkToTruth) return phases.State == BedroomPhase.MorningDesk ? "[E] Talk to The Truth" : "";
-        if (action == Action.GoToBed && phases.State == BedroomPhase.NightGameplay && phases.NightStanding) return phases.nightExcursion.ReturnBlockedReason.Length == 0 ? "[E] Return to bed" : phases.nightExcursion.ReturnBlockedReason;
+        if (action == Action.SitAtDesk) return phases.State == BedroomPhase.MorningExploration ? GameText.UI("prompt.sitDesk") : "";
+        if (action == Action.Laptop) return phases.State == BedroomPhase.MorningDesk ? GameText.UI("prompt.laptop") : "";
+        if (action == Action.TalkToTruth) return phases.State == BedroomPhase.MorningDesk ? GameText.UI("prompt.truth") : "";
+        if (action == Action.GoToBed && phases.State == BedroomPhase.NightGameplay && phases.NightStanding) return phases.nightExcursion.ReturnBlockedReason.Length == 0 ? GameText.UI("prompt.returnBed") : phases.nightExcursion.ReturnBlockedReason;
         if (phases.State != BedroomPhase.MorningExploration) return "";
-        if (!phases.tasks.BedUnlocked) return "I'm not sleepy yet.";
-        return phases.CanStartNight ? "[E] Go to bed" : "I should turn off the light first.";
+        if (!phases.tasks.BedUnlocked) return GameText.UI("prompt.notSleepy");
+        return phases.CanStartNight ? GameText.UI("prompt.goBed") : GameText.UI("prompt.lightFirst");
     }
     public bool CanInteract(PlayerInteractor actor)
     {

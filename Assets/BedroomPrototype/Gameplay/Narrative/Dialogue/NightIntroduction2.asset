@@ -18,6 +18,15 @@ MonoBehaviour:
   lines:
   - speaker: TheTruth
     text: You're still here.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898560
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -34,6 +43,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: I suppose that's something.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898561
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -50,6 +68,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: You know how they work now, don't you?
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898562
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -66,6 +93,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Keep listening.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898563
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -82,6 +118,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Keep watching.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898564
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -98,6 +143,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Don't waste that flashlight.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898565
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -114,6 +168,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: And about that window...
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898566
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -130,6 +193,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Leaving it open won't make anything go away.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898567
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -146,6 +218,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: It just means you won't hear it coming next time.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898568
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -162,6 +243,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Strange how comfortable you've gotten with things that hurt you.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898569
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -178,6 +268,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Anyway.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898570
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -194,6 +293,15 @@ MonoBehaviour:
     choices: []
   - speaker: TheTruth
     text: Try to get through another night.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: GUID:307a777c1a3e2004bbee95f62ad7e4f4
+      m_TableEntryReference:
+        m_KeyId: 2054312898571
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     charactersPerSecond: -1
     eventId: 
     eventAfterLine: 1
@@ -208,3 +316,6 @@ MonoBehaviour:
       choiceEntry: 
       choiceReply: 
     choices: []
+  references:
+    version: 2
+    RefIds: []

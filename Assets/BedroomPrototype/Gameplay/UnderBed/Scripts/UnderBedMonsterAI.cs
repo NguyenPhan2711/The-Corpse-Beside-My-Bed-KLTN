@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 public enum UnderBedState { Dormant, Scratching, Emerging, FullyExposed, PlayerHiding, Retreat, Attack }
-public enum UnderBedOutcome { Canceled, Defended, Failed }
+public enum UnderBedOutcome { Canceled, Defended, Failed, FakeOut }
 
 // A future shared director can implement this contract; no other threat locations are created here.
 public interface IMonsterEncounterCoordinator
@@ -33,6 +33,7 @@ public sealed class UnderBedMonsterAI : MonoBehaviour
     public float RemainingDormant => dormantRemaining;
     public float HiddenHoldTime => hiddenHoldTime;
     public bool SafeToUncover { get; private set; }
+    public bool FakeOut { get; private set; }
     public int SuccessfulDefenses { get; private set; }
     public int FailedDefenses { get; private set; }
     public event Action<UnderBedState> StateChanged;
@@ -74,7 +75,7 @@ public sealed class UnderBedMonsterAI : MonoBehaviour
                 if (dormantRemaining <= 0 && !(encounterCoordinator is BedroomEncounterDirector)) TryBegin();
                 break;
             case UnderBedState.Scratching:
-                if (stateTime >= config.scratchingDuration) ChangeState(UnderBedState.Emerging);
+                if (stateTime >= config.scratchingDuration) { if (FakeOut) EndFakeOut(); else ChangeState(UnderBedState.Emerging); }
                 break;
             case UnderBedState.Emerging:
                 AnimateEmergence(Mathf.Clamp01(stateTime / config.emergingDuration));
@@ -115,6 +116,7 @@ public sealed class UnderBedMonsterAI : MonoBehaviour
         if (!NightActive || !encountersEnabled || CurrentConfig == null || !CurrentConfig.encounterEnabled) return false;
         if (Coordinator != null && !(forced && encounterCoordinator is BedroomEncounterDirector shared ? shared.TryAcquire(this) : Coordinator.TryStartEncounter(this))) { dormantRemaining = CurrentConfig.directorRetryDelay; return false; }
         encounterActive = true; SafeToUncover = false; hiddenHoldTime = 0; releaseWarnings = 0;
+        FakeOut = encounterCoordinator is BedroomEncounterDirector roller ? roller.RollChance(CurrentConfig.fakeOutChance) : UnityEngine.Random.value < CurrentConfig.fakeOutChance;
         ChangeState(UnderBedState.Scratching); HideVisual(); StopAudio(); Play(scratchingSource, CurrentConfig.scratching, CurrentConfig.loopScratching);
         EncounterBegan?.Invoke(this); return true;
     }
@@ -126,7 +128,7 @@ public sealed class UnderBedMonsterAI : MonoBehaviour
     void Expose(float window)
     {
         AnimateEmergence(1); ChangeState(UnderBedState.FullyExposed); reactionDeadline = Time.timeAsDouble + window;
-        if (encounterCoordinator is BedroomEncounterDirector director) director.BeginBedDefense(this);
+        if (encounterCoordinator is BedroomEncounterDirector director) { director.BeginBedDefense(this); reactionDeadline += director.ConcurrentDefenseGrace(this); }
         exposureSequence = blanket.PressSequence; headStartRotation = head.rotation;
         Stop(scratchingSource); Stop(emergingSource); Play(exposedSource, CurrentConfig.exposed); Play(breathingSource, CurrentConfig.breathing, true);
     }
@@ -171,6 +173,13 @@ public sealed class UnderBedMonsterAI : MonoBehaviour
         visualRoot.localScale = Vector3.one; SetVisible(true, true, true, true);
         phases.SetObservationLock(this, true); ChangeState(UnderBedState.Attack); StopAudio(); Play(attackSource, CurrentConfig.attacking);
     }
+    // Scratching stops and nothing emerges; ends like a real encounter so pacing and cooldown still apply.
+    void EndFakeOut()
+    {
+        Stop(scratchingSource);
+        if (CurrentConfig.logDefenses) Debug.Log("Under-bed fake-out: scratching stopped without emergence.");
+        Finish(UnderBedOutcome.FakeOut); ReturnDormant(); FakeOut = false;
+    }
     void ReturnDormant()
     {
         ChangeState(UnderBedState.Dormant); HideVisual(); phases.SetObservationLock(this, false);
@@ -203,7 +212,7 @@ public sealed class UnderBedMonsterAI : MonoBehaviour
     public void ResetEncounter()
     {
         Finish(UnderBedOutcome.Canceled); ChangeState(UnderBedState.Dormant); HideVisual(); StopAudio();
-        SafeToUncover = false; hiddenHoldTime = 0; releaseWarnings = 0;
+        SafeToUncover = FakeOut = false; hiddenHoldTime = 0; releaseWarnings = 0;
         dormantRemaining = encounterCoordinator is BedroomEncounterDirector ? 0 : CurrentConfig == null ? 15 : CurrentConfig.initialDelay;
         if (phases != null) phases.SetObservationLock(this, false);
     }
@@ -242,14 +251,15 @@ public sealed class UnderBedMonsterAI : MonoBehaviour
     {
         get
         {
-            if (CurrentConfig == null || !CurrentConfig.showTextCues || !NightActive) return "";
-            if (phases.PlayerState != NightPlayerState.InBed && State != UnderBedState.Dormant) return "Something is under the bed. Return to bed to hide!";
-            if (SafeToUncover && Time.time < safeCueUntil) return "The scraping has faded. You can release Space.";
-            if ((State == UnderBedState.Emerging || State == UnderBedState.FullyExposed) && blanket.HoldRequested) return "Too soon. Uncover fully, then time a fresh hold.";
-            if (State == UnderBedState.Scratching) return "Something is scratching underneath the bed...";
-            if (State == UnderBedState.Emerging) return "Wait until it stops and faces you.";
-            if (State == UnderBedState.FullyExposed) return releaseWarnings > 0 ? "Stay calm. Uncover fully, then hold Space again." : "It stopped. Hold Space now.";
-            if (State == UnderBedState.PlayerHiding || State == UnderBedState.Retreat) return "Keep holding Space. Wait for it to leave.";
+            if (CurrentConfig == null || !NightActive) return "";
+            if (!CurrentConfig.showTextCues && !(encounterCoordinator is BedroomEncounterDirector cueDirector && cueDirector.showThreatCuesOnAllNights)) return "";
+            if (phases.PlayerState != NightPlayerState.InBed && State != UnderBedState.Dormant) return GameText.Cue("underBed.returnToBed");
+            if (SafeToUncover && Time.time < safeCueUntil) return GameText.Cue("underBed.safe");
+            if ((State == UnderBedState.Emerging || State == UnderBedState.FullyExposed) && blanket.HoldRequested) return GameText.Cue("underBed.tooSoon");
+            if (State == UnderBedState.Scratching) return GameText.Cue("underBed.scratching");
+            if (State == UnderBedState.Emerging) return GameText.Cue("underBed.emerging");
+            if (State == UnderBedState.FullyExposed) return releaseWarnings > 0 ? GameText.Cue("underBed.exposedWarned") : GameText.Cue("underBed.exposed");
+            if (State == UnderBedState.PlayerHiding || State == UnderBedState.Retreat) return GameText.Cue("underBed.hiding");
             return "";
         }
     }

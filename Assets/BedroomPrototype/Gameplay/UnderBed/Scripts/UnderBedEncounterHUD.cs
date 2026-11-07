@@ -33,6 +33,6 @@ public sealed class UnderBedEncounterHUD : MonoBehaviour
         debugPanel.SetActive(allowed && night && visible);
         monster.phases.SetObservationLock(this, allowed && night && visible);
         if (allowed && night && visible)
-            debugText.text = "UNDER-BED DEBUG [F3]\nState: " + monster.State + "\nReaction: " + monster.RemainingReaction.ToString("F2") + "s  Dormant: " + monster.RemainingDormant.ToString("F1") + "s\nBlanket: " + (blanket.IsCovered ? "covered" : blanket.IsCovering ? "moving" : "down") + "  Held: " + blanket.HoldRequested + "\nDefended: " + monster.SuccessfulDefenses + "  Failed: " + monster.FailedDefenses;
+            debugText.text = "UNDER-BED DEBUG [F3]\n" + (monster.encounterCoordinator is BedroomEncounterDirector director ? director.DebugLine + "\n" : "") + "State: " + monster.State + "  Fake-out: " + monster.FakeOut + "\nReaction: " + monster.RemainingReaction.ToString("F2") + "s  Dormant: " + monster.RemainingDormant.ToString("F1") + "s\nBlanket: " + (blanket.IsCovered ? "covered" : blanket.IsCovering ? "moving" : "down") + "  Held: " + blanket.HoldRequested + "\nDefended: " + monster.SuccessfulDefenses + "  Failed: " + monster.FailedDefenses;
     }
 }

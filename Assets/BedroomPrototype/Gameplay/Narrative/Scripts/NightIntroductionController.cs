@@ -9,7 +9,7 @@ public sealed class NightIntroductionController:MonoBehaviour
  [SerializeField]bool[] seen=new bool[3];public bool IsIntroducing=>phases.State==BedroomPhase.NightIntroduction;public bool CanSkip=>IsIntroducing&&seen[Mathf.Clamp(phases.tasks.CurrentDay-1,0,2)];public bool Finishing{get;private set;}
  [System.NonSerialized]public bool debugAutoSkipAllIntroductions;
  void OnEnable(){skipAction.Enable();}void OnDisable(){skipAction.Disable();CancelIntroduction();}void OnDestroy(){skipAction.Dispose();}
- void Update(){if(skipLabel){skipLabel.gameObject.SetActive(CanSkip&&!Finishing);skipLabel.text=skipPrompt;}if(CanSkip&&!Finishing&&skipAction.WasPressedThisFrame())SkipIntroduction();}
+ void Update(){if(skipLabel){skipLabel.gameObject.SetActive(CanSkip&&!Finishing);skipLabel.text=GameText.Get(GameText.GameUI,"intro.skip",skipPrompt);}if(CanSkip&&!Finishing&&skipAction.WasPressedThisFrame())SkipIntroduction();}
  public void BeginIntroduction(bool retry=false)
  {
   CancelIntroduction();reveal.ResetForNight(phases.tasks.CurrentDay);Finishing=false;int index=Mathf.Clamp(phases.tasks.CurrentDay-1,0,introductions.Length-1);

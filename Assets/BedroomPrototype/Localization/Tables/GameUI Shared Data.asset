@@ -1,0 +1,240 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: GameUI Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: GameUI
+  m_TableCollectionNameGuidString: 66264a7053b28ed45857db33d90fa99f
+  m_Entries:
+  - m_Id: 1771696500736
+    m_Key: prompt.sitDesk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969728
+    m_Key: prompt.laptop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969729
+    m_Key: prompt.truth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969730
+    m_Key: prompt.returnBed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969731
+    m_Key: prompt.notSleepy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969732
+    m_Key: prompt.goBed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969733
+    m_Key: prompt.lightFirst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969734
+    m_Key: prompt.getOutOfBed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969735
+    m_Key: prompt.closeWindow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969736
+    m_Key: prompt.lightOff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969737
+    m_Key: prompt.lightOn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969738
+    m_Key: reason.nightInactive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969739
+    m_Key: reason.transition
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969740
+    m_Key: reason.notInBed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969741
+    m_Key: reason.windowClosed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969742
+    m_Key: reason.repelWindow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771792969743
+    m_Key: reason.notStanding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164032
+    m_Key: reason.getOutFirst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164033
+    m_Key: reason.windowOccupied
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164034
+    m_Key: reason.windowClosing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164035
+    m_Key: reason.windowAlreadyClosed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164036
+    m_Key: reason.dealThreat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164037
+    m_Key: reason.finishResisting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164038
+    m_Key: checklist.header
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164039
+    m_Key: checklist.footer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164040
+    m_Key: status.night
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164041
+    m_Key: status.day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164042
+    m_Key: clock.0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164043
+    m_Key: clock.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164044
+    m_Key: clock.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164045
+    m_Key: clock.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164046
+    m_Key: clock.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164047
+    m_Key: clock.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164048
+    m_Key: clock.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164049
+    m_Key: laptop.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164050
+    m_Key: laptop.titleSender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164051
+    m_Key: laptop.allDone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164052
+    m_Key: truth.finished
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164053
+    m_Key: result.wonTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164054
+    m_Key: result.lostTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164055
+    m_Key: result.wonLast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164056
+    m_Key: result.wonNext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164057
+    m_Key: result.lostBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164058
+    m_Key: result.retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164059
+    m_Key: result.nextMorning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164060
+    m_Key: dialogue.choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164061
+    m_Key: dialogue.reveal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164062
+    m_Key: dialogue.continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164063
+    m_Key: speaker.TheTruth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164064
+    m_Key: speaker.Protagonist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164065
+    m_Key: speaker.Narration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164066
+    m_Key: intro.skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771797164067
+    m_Key: ui.close
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3677872542231560324
+  references:
+    version: 2
+    RefIds:
+    - rid: 3677872542231560324
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793205559310

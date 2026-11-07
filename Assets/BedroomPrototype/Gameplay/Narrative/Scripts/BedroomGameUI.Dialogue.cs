@@ -29,7 +29,7 @@ public sealed partial class BedroomGameUI
   if(DialogueTyping){revealCount+=Time.unscaledDeltaTime*revealSpeed;dialogueText.maxVisibleCharacters=Mathf.Min(characterCount,Mathf.FloorToInt(revealCount));if(dialogueText.maxVisibleCharacters>=characterCount){DialogueTyping=false;UpdateContinue();}}
   if(!DialogueBusy&&!phases.IsObservationLocked&&Time.frameCount>openedFrame&&dialogueAdvance.WasPressedThisFrame())AdvanceDialogue();
  }
- void UpdateContinue(){if(dialogueContinue)dialogueContinue.text=DialogueBusy?"":HasChoices?"Choose a reply":DialogueTyping?"Click / Enter - reveal text":"Click / Enter - continue";}
+ void UpdateContinue(){if(dialogueContinue)dialogueContinue.text=DialogueBusy?"":HasChoices?GameText.UI("dialogue.choose"):DialogueTyping?GameText.UI("dialogue.reveal"):GameText.UI("dialogue.continue");}
  bool HasChoices=>CurrentDialogue&&DialogueLineIndex>=0&&DialogueLineIndex<CurrentDialogue.lines.Length&&CurrentDialogue.lines[DialogueLineIndex].choices!=null&&CurrentDialogue.lines[DialogueLineIndex].choices.Length>0;
  public bool TryShowDialogue(DialogueSequence sequence,Action onComplete=null,Func<string,IEnumerator> handler=null,Action<int,int> onChoice=null)
  {
@@ -60,9 +60,9 @@ public sealed partial class BedroomGameUI
  void PresentDialogueLine()
  {
   if(!DialogueActive)return;var line=CurrentDialogue.lines[DialogueLineIndex];dialoguePanel.SetActive(true);
-  var style=speakers.FirstOrDefault(s=>s.id==line.speaker);dialogueSpeaker.text=style!=null?style.displayName:line.speaker;dialogueSpeaker.color=style!=null?style.nameColor:Color.white;dialogueText.color=style!=null?style.textColor:Color.white;
-  dialogueText.text=line.text;dialogueText.ForceMeshUpdate();characterCount=dialogueText.textInfo.characterCount;revealCount=0;revealSpeed=line.charactersPerSecond<0?defaultCharactersPerSecond:line.charactersPerSecond;DialogueTyping=revealSpeed>0;dialogueText.maxVisibleCharacters=DialogueTyping?0:int.MaxValue;
-  if(line.choices!=null)for(int i=0;i<line.choices.Length;i++){int index=i;var b=Instantiate(buttonTemplate,dialogueChoiceRoot);b.name="DialogueReply"+i;b.GetComponentInChildren<TMP_Text>(true).text=line.choices[i].text;b.onClick.RemoveAllListeners();b.onClick.AddListener(()=>SelectDialogueChoice(index));var image=b.GetComponent<UnityEngine.UI.Image>();if(image)image.color=new Color(.16f,.16f,.17f,.98f);b.gameObject.SetActive(true);}
+  var style=speakers.FirstOrDefault(s=>s.id==line.speaker);dialogueSpeaker.text=GameText.Get(GameText.GameUI,"speaker."+line.speaker,style!=null?style.displayName:line.speaker);dialogueSpeaker.color=style!=null?style.nameColor:Color.white;dialogueText.color=style!=null?style.textColor:Color.white;
+  dialogueText.text=line.Text;dialogueText.ForceMeshUpdate();characterCount=dialogueText.textInfo.characterCount;revealCount=0;revealSpeed=line.charactersPerSecond<0?defaultCharactersPerSecond:line.charactersPerSecond;DialogueTyping=revealSpeed>0;dialogueText.maxVisibleCharacters=DialogueTyping?0:int.MaxValue;
+  if(line.choices!=null)for(int i=0;i<line.choices.Length;i++){int index=i;var b=Instantiate(buttonTemplate,dialogueChoiceRoot);b.name="DialogueReply"+i;b.GetComponentInChildren<TMP_Text>(true).text=line.choices[i].Text;b.onClick.RemoveAllListeners();b.onClick.AddListener(()=>SelectDialogueChoice(index));var image=b.GetComponent<UnityEngine.UI.Image>();if(image)image.color=new Color(.16f,.16f,.17f,.98f);b.gameObject.SetActive(true);}
   var rect=dialoguePanel.GetComponent<RectTransform>();rect.sizeDelta=new Vector2(rect.sizeDelta.x,HasChoices?240+line.choices.Length*42:210);UpdateContinue();
  }
  public bool SelectDialogueChoice(int index)

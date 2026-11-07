@@ -13,6 +13,7 @@ public sealed partial class BedroomGameUI : MonoBehaviour
     public UnityEngine.UI.Button buttonTemplate, closeButton;
     public UnityEngine.UI.Image fade;
     public bool ModalOpen => modalPanel.activeSelf || DialogueActive;
+    static readonly string[] ClockKeys = { "clock.0", "clock.1", "clock.2", "clock.3", "clock.4", "clock.5", "clock.6" };
     void Awake() { buttonTemplate.gameObject.SetActive(false); modalPanel.SetActive(false); closeButton.onClick.AddListener(CloseModal); SetFade(0); InitializeDialogue(); }
     void Update()
     {
@@ -20,8 +21,8 @@ public sealed partial class BedroomGameUI : MonoBehaviour
         bool desk = phases.State == BedroomPhase.MorningDesk && !phases.IsTransitioning;
         prompt.text = !ModalOpen && !phases.IsTransitioning ? interactor.CurrentPrompt : "";
         checklistPanel.SetActive(desk);
-        if (desk) checklist.text = "MORNING " + tasks.CurrentDay + "\n" + string.Join("\n", tasks.Definition.objectives.Select(o => (tasks.IsComplete(o.id) ? "[x] " : "[ ] ") + o.label)) + "\n\nEscape: stand up (close dialogue first)";
-        status.text = (phases.State == BedroomPhase.NightIntroduction || phases.State == BedroomPhase.NightGameplay || phases.State == BedroomPhase.NightWon || phases.State == BedroomPhase.NightLost) ? "NIGHT " + tasks.CurrentDay + "   " + phases.night.Clock : "DAY " + tasks.CurrentDay + " / 3";
+        if (desk) checklist.text = GameText.Format(GameText.GameUI, "checklist.header", tasks.CurrentDay) + "\n" + string.Join("\n", tasks.Definition.objectives.Select(o => (tasks.IsComplete(o.id) ? "[x] " : "[ ] ") + o.Label)) + "\n\n" + GameText.UI("checklist.footer");
+        status.text = (phases.State == BedroomPhase.NightIntroduction || phases.State == BedroomPhase.NightGameplay || phases.State == BedroomPhase.NightWon || phases.State == BedroomPhase.NightLost) ? GameText.Format(GameText.GameUI, "status.night", tasks.CurrentDay, GameText.UI(ClockKeys[phases.night.Hour])) : GameText.Format(GameText.GameUI, "status.day", tasks.CurrentDay);
         crosshair.gameObject.SetActive(!ModalOpen && !phases.IsTransitioning && (phases.State == BedroomPhase.MorningExploration || desk || phases.State == BedroomPhase.NightGameplay));
     }
     public void SetFade(float alpha) { var c = fade.color; c.a = Mathf.Clamp01(alpha); fade.color = c; fade.raycastTarget = alpha > .01f; }
@@ -45,24 +46,24 @@ public sealed partial class BedroomGameUI : MonoBehaviour
     {
         if (phases.State != BedroomPhase.MorningDesk || phases.IsTransitioning) return;
         var message = tasks.Definition.messages.FirstOrDefault(m => !tasks.Current.repliedMessages.Contains(m.id));
-        if (message == null) { Show("PROTOTYPE LAPTOP", "All required messages have been read and replied to."); return; }
-        Show("PROTOTYPE LAPTOP - " + message.sender, message.body);
-        for (int i = 0; i < message.replies.Length; i++) { int reply = i; AddButton(message.replies[i], () => { if (tasks.ReplyToMessage(message.id, reply)) OpenLaptop(); }); }
+        if (message == null) { Show(GameText.UI("laptop.title"), GameText.UI("laptop.allDone")); return; }
+        Show(GameText.Format(GameText.GameUI, "laptop.titleSender", message.Sender), message.Body);
+        for (int i = 0; i < message.ReplyCount; i++) { int reply = i; AddButton(message.Reply(i), () => { if (tasks.ReplyToMessage(message.id, reply)) OpenLaptop(); }); }
     }
     public void OpenTruth()
     {
         if(phases.State!=BedroomPhase.MorningDesk||phases.IsTransitioning||DialogueActive||modalPanel.activeSelf)return;
         int step=tasks.Current.conversationStep;var sequence=ScriptableObject.CreateInstance<DialogueSequence>();sequence.hideFlags=HideFlags.DontSave;sequence.sequenceId="morning-truth-"+tasks.CurrentDay;sequence.blockMovement=true;
-        sequence.lines=step>=tasks.Definition.conversation.Length?new[]{new DialogueLine{speaker="TheTruth",text="The required conversation is finished. Your choices have been recorded."}}:tasks.Definition.conversation.Skip(step).Select(c=>new DialogueLine{speaker="TheTruth",text=c.line,choices=c.replies.Select(r=>new DialogueChoice{text=r}).ToArray()}).ToArray();
+        sequence.lines=step>=tasks.Definition.conversation.Length?new[]{new DialogueLine{speaker="TheTruth",text=GameText.UI("truth.finished")}}:tasks.Definition.conversation.Skip(step).Select(c=>new DialogueLine{speaker="TheTruth",text=c.Line,choices=Enumerable.Range(0,c.ReplyCount).Select(r=>new DialogueChoice{text=c.Reply(r)}).ToArray()}).ToArray();
         if(!TryShowDialogue(sequence,null,null,(line,reply)=>tasks.ReplyToTruth(reply)))Destroy(sequence);
     }
     public void ShowNightResult(bool won)
     {
         CancelDialogue();
         bool last = tasks.CurrentDay >= Mathf.Min(3, tasks.content.days.Length);
-        Show(won ? "6 AM - NIGHT SURVIVED" : "NIGHT LOST", won ? (last ? "Three-night prototype complete.\nYour dialogue choices remain in this session's progression data." : "Morning " + (tasks.CurrentDay + 1) + " is ready.") : "Something reached you before dawn.", false);
-        if (!won) AddButton("Retry night", () => { DismissResult(); phases.RetryNight(); });
-        else if (!last) AddButton("Begin next morning", phases.NextMorning);
+        Show(won ? GameText.UI("result.wonTitle") : GameText.UI("result.lostTitle"), won ? (last ? GameText.UI("result.wonLast") : GameText.Format(GameText.GameUI, "result.wonNext", tasks.CurrentDay + 1)) : GameText.UI("result.lostBody"), false);
+        if (!won) AddButton(GameText.UI("result.retry"), () => { DismissResult(); phases.RetryNight(); });
+        else if (!last) AddButton(GameText.UI("result.nextMorning"), phases.NextMorning);
     }
 }
 

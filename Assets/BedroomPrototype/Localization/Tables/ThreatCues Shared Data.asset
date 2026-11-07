@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: ThreatCues Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: ThreatCues
+  m_TableCollectionNameGuidString: c7ca96b1d99ef1b4cb9ed3651af97728
+  m_Entries:
+  - m_Id: 1771277070336
+    m_Key: underBed.returnToBed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150720
+    m_Key: underBed.safe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150721
+    m_Key: underBed.tooSoon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150722
+    m_Key: underBed.scratching
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150723
+    m_Key: underBed.emerging
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150724
+    m_Key: underBed.exposedWarned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771365150725
+    m_Key: underBed.exposed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345024
+    m_Key: underBed.hiding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345025
+    m_Key: door.listening
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345026
+    m_Key: door.returnToBed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345027
+    m_Key: door.opening
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345028
+    m_Key: door.retreat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345029
+    m_Key: door.silence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345030
+    m_Key: door.state.Approaching
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345031
+    m_Key: door.state.GentleKnocking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345032
+    m_Key: door.state.AggressiveKnocking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345033
+    m_Key: door.state.Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345034
+    m_Key: window.aim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345035
+    m_Key: window.knocking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345036
+    m_Key: window.opening
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345037
+    m_Key: window.emerging
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345038
+    m_Key: window.retreat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345039
+    m_Key: window.open
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345040
+    m_Key: corpse.beckoning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345041
+    m_Key: corpse.reaching
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1771369345042
+    m_Key: corpse.resisting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19503183769600
+    m_Key: door.fakeOut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19503322181632
+    m_Key: window.fakeOut
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3677872542231560325
+  references:
+    version: 2
+    RefIds:
+    - rid: 3677872542231560325
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793205559434

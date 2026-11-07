@@ -42,8 +42,8 @@ public sealed class MorningTaskManager : MonoBehaviour
     public bool ReplyToMessage(string id, int reply)
     {
         var message = Definition.messages.FirstOrDefault(m => m.id == id);
-        if (message == null || Current.repliedMessages.Contains(id) || reply < 0 || reply >= message.replies.Length) return false;
-        choices.Add(new Choice { day = currentDay, source = "laptop", entry = id, reply = message.replies[reply] });
+        if (message == null || Current.repliedMessages.Contains(id) || reply < 0 || reply >= message.ReplyCount) return false;
+        choices.Add(new Choice { day = currentDay, source = "laptop", entry = id, reply = message.ReplyId(reply) });
         Current.repliedMessages.Add(id);
         if (Definition.messages.All(m => Current.repliedMessages.Contains(m.id))) CompleteObjective(Definition.laptopObjectiveId);
         Changed?.Invoke(); return true;
@@ -52,8 +52,8 @@ public sealed class MorningTaskManager : MonoBehaviour
     {
         if (Current.conversationStep >= Definition.conversation.Length) return false;
         var line = Definition.conversation[Current.conversationStep];
-        if (reply < 0 || reply >= line.replies.Length) return false;
-        choices.Add(new Choice { day = currentDay, source = "truth", entry = Current.conversationStep.ToString(), reply = line.replies[reply] });
+        if (reply < 0 || reply >= line.ReplyCount) return false;
+        choices.Add(new Choice { day = currentDay, source = "truth", entry = Current.conversationStep.ToString(), reply = line.ReplyId(reply) });
         Current.conversationStep++;
         if (Current.conversationStep == Definition.conversation.Length) CompleteObjective(Definition.truthObjectiveId);
         Changed?.Invoke(); return true;

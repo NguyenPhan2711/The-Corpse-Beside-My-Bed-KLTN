@@ -17,12 +17,14 @@ MonoBehaviour:
   knockingDuration: 4
   openingDuration: 2
   emergingDuration: 1.7
-  reactionWindow: 1.7
-  requiredExposure: 0.8
+  reactionWindow: 2.5
+  requiredExposure: 1
   retreatDuration: 1.5
   attackDuration: 0.6
-  successCooldown: 16
   safeClosedCooldown: 20
+  successCooldownRange: {x: 12, y: 20}
+  fakeOutChance: 0.33
+  fakeOutSilence: 1.5
   minimumKnocking: 3
   minimumEmerging: 1.4
   earlyOpenMultiplier: 1.5
@@ -46,7 +48,7 @@ MonoBehaviour:
   attackPriority: 20
   knockPauseStart: 0.4
   knockPauseEnd: 0.12
-  textCues: 1
+  textCues: 0
   logResults: 1
   resetExposureOnMiss: 1
   exposureDecayPerSecond: 2

@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogue_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 307a777c1a3e2004bbee95f62ad7e4f4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2054229012480
+    m_Localized: Can't sleep?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704256
+    m_Localized: Of course you can't.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704257
+    m_Localized: Well, since we're both awake, I might as well tell you something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704258
+    m_Localized: If you hear scratching beneath the bed, don't hide immediately.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704259
+    m_Localized: Wait until whatever's under there shows itself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704260
+    m_Localized: Then pull that blanket over your head.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704261
+    m_Localized: And if someone comes knocking at the door...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704262
+    m_Localized: Don't make a sound when it opens.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704263
+    m_Localized: Just hold your breath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704264
+    m_Localized: Oh, and keep that flashlight nearby.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704265
+    m_Localized: Something likes looking through your window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704266
+    m_Localized: Shine it in the face if it gets too close.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704267
+    m_Localized: And if it leaves the window open, you might want to close it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704268
+    m_Localized: Unless you enjoy being surprised.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704269
+    m_Localized: Funny, isn't it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704270
+    m_Localized: All these things trying to get to you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054308704271
+    m_Localized: And you're still the one who has to keep yourself alive.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898560
+    m_Localized: You're still here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898561
+    m_Localized: I suppose that's something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898562
+    m_Localized: You know how they work now, don't you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898563
+    m_Localized: Keep listening.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898564
+    m_Localized: Keep watching.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898565
+    m_Localized: Don't waste that flashlight.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898566
+    m_Localized: And about that window...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898567
+    m_Localized: Leaving it open won't make anything go away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898568
+    m_Localized: It just means you won't hear it coming next time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898569
+    m_Localized: Strange how comfortable you've gotten with things that hurt you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898570
+    m_Localized: Anyway.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898571
+    m_Localized: Try to get through another night.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898572
+    m_Localized: Well.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898573
+    m_Localized: Would you look at that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898574
+    m_Localized: He's been beside you this whole time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898575
+    m_Localized: Even I thought you'd recognize him sooner.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898576
+    m_Localized: Doesn't he look familiar?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898577
+    m_Localized: Don't look so surprised.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054312898578
+    m_Localized: You've spent so much time thinking about becoming him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092864
+    m_Localized: Here's the thing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092865
+    m_Localized: He doesn't want to be alone anymore.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092866
+    m_Localized: If you feel yourself sinking toward him...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092867
+    m_Localized: Look at him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092868
+    m_Localized: Push yourself back up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092869
+    m_Localized: Don't let him pull you down.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092870
+    m_Localized: Although...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2054317092871
+    m_Localized: Would it really be so terrible to rest?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
