@@ -233,6 +233,26 @@ MonoBehaviour:
     m_Localized: 'Close [Escape]'
     m_Metadata:
       m_Items: []
+  - m_Id: 3632542143426560
+    m_Localized: '[E] Look closer'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632542315393024
+    m_Localized: '[E] Get up'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632542315393025
+    m_Localized: Move the mouse to look around.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632542315393026
+    m_Localized: Go to the desk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632542315393027
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

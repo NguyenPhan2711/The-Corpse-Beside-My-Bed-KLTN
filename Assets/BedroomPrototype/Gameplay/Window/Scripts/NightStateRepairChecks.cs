@@ -29,7 +29,7 @@ public sealed class NightStateRepairChecks : MonoBehaviour
     }
     void Reply() { p.ui.ActiveButtonRoot.GetComponentsInChildren<UnityEngine.UI.Button>().First(b => b.gameObject.activeSelf && b != p.ui.buttonTemplate).onClick.Invoke(); }
     IEnumerator Start()
-    {
+    {var opening=FindAnyObjectByType<MorningOpeningController>();if(opening)opening.DebugSkipOpening();
         p = FindAnyObjectByType<BedroomPhaseController>(); window = FindAnyObjectByType<WindowMonsterEncounter>(); door = FindAnyObjectByType<DoorMonsterEncounter>(); under = FindAnyObjectByType<UnderBedMonsterAI>();
         SchedulingTestOverride.Configure(window.director,100);window.director.quietInterval=3;window.director.automaticScheduling=false;
         flash = window.flashlight; breath = door.breath; blanket = under.blanket;

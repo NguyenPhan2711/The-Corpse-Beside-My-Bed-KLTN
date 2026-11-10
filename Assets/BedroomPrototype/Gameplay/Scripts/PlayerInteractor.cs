@@ -43,6 +43,9 @@ public sealed class PlayerInteractor : MonoBehaviour
     void Update()
     {
         RefreshTarget();
+        var dialogue = phases.ui.CurrentDialogue;
+        if (interact != null && interact.WasPressedThisFrame() && lastPressFrame != Time.frameCount && phases.ui.DialogueActive && dialogue && dialogue.advanceWithInteract)
+        { lastPressFrame = Time.frameCount; ReceivedPresses++; phases.ui.AdvanceDialogue(); }
         if (interact != null && interact.WasPressedThisFrame() && lastPressFrame != Time.frameCount)
         {
             lastPressFrame = Time.frameCount; ReceivedPresses++;
@@ -52,7 +55,7 @@ public sealed class PlayerInteractor : MonoBehaviour
             if (logInteractions && (Application.isEditor || Debug.isDebugBuild))
                 Debug.Log("[Interaction] E pressed=True | State=" + phases.PlayerState + " | Phase=" + phases.State + " | Collider=" + (CurrentCollider ? CurrentCollider.name : "None") + " | Target=" + ResolvedTargetName + " | Distance=" + TargetDistance.ToString("F2") + " | Allowed=" + allowed + " | Reason=" + reason);
             if (allowed) { ExecutedInteractions++; target.Interact(this); }
-            else { feedback = reason; feedbackUntil = Time.unscaledTime + 1.2f; }
+            else if (phases.State != BedroomPhase.MorningOpening) { feedback = reason; feedbackUntil = Time.unscaledTime + 1.2f; }
             RefreshTarget(); // The same press never resolves or executes a second target.
         }
         if (CurrentTarget == null && Time.unscaledTime < feedbackUntil) CurrentPrompt = feedback;
@@ -77,6 +80,11 @@ public sealed class PlayerInteractor : MonoBehaviour
         if (phases == null) return;
         if (phases.IsTransitioning) { BlockedReason = "Player transition in progress."; return; }
         if (phases.ui.ModalOpen || phases.ui.GameplayInputSuppressed) { BlockedReason = "Close the current dialogue first."; return; }
+        if (phases.State == BedroomPhase.MorningOpening)
+        {
+            if (phases.opening != null && phases.opening.CanInteract(this)) Resolve(phases.opening);
+            return;
+        }
         bool night = phases.State == BedroomPhase.NightGameplay;
         if (night && phases.PlayerState == NightPlayerState.InBed)
         {

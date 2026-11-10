@@ -17,5 +17,8 @@ using UnityEngine.Localization;
 [CreateAssetMenu(menuName="Bedroom/Dialogue sequence")]
 public sealed class DialogueSequence:ScriptableObject
 {
- public string sequenceId;public bool blockMovement=true,allowLook;public DialogueLine[] lines=Array.Empty<DialogueLine>();
+ public string sequenceId;public bool blockMovement=true,allowLook;
+ [Tooltip("Seconds a fully shown line stays before advancing on its own. 0 waits for input.")][Min(0)]public float autoAdvanceSeconds;
+ [Tooltip("E (through PlayerInteractor) also advances lines.")]public bool advanceWithInteract;
+ public DialogueLine[] lines=Array.Empty<DialogueLine>();
 }

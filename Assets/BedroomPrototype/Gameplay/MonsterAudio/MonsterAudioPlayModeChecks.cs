@@ -23,7 +23,7 @@ public sealed class MonsterAudioPlayModeChecks : MonoBehaviour
  AudioSource[] WindowSources()=>new[]{w.quietSource,w.aggressiveSource,w.latchSource,w.openingSource,w.breathingSource,w.retreatSource};
  AudioClip Clip(string path)=>AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/BedroomPrototype/Audios/"+path);
  IEnumerator Start()
- {
+ {var opening=FindAnyObjectByType<MorningOpeningController>();if(opening)opening.DebugSkipOpening();
   director=FindAnyObjectByType<BedroomEncounterDirector>();p=director.phases;d=director.door;u=director.underBed;w=director.window;director.automaticScheduling=false;director.quietInterval=.05f;p.night.nightDurationSeconds=300;
   original=InputSystem.settings;test=Instantiate(original);test.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;test.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;InputSystem.settings=test;keyboard=InputSystem.AddDevice<Keyboard>();mouse=InputSystem.AddDevice<Mouse>();
   oldD=d.nightConfigs;d.nightConfigs=oldD.Select(Instantiate).ToArray();oldU=u.nightConfigs;u.nightConfigs=oldU.Select(Instantiate).ToArray();oldW=w.nightConfigs;w.nightConfigs=oldW.Select(Instantiate).ToArray();

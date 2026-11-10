@@ -18,7 +18,7 @@ public sealed class DefenseResourcePlayModeChecks : MonoBehaviour
  IEnumerator Aim(Vector3 target){p.CaptureCursor();var q=Quaternion.LookRotation(target-p.view.transform.position);InputSystem.QueueDeltaStateEvent(mouse.delta,new Vector2(Mathf.DeltaAngle(p.view.transform.eulerAngles.y,q.eulerAngles.y),-Mathf.DeltaAngle(p.view.transform.eulerAngles.x,q.eulerAngles.x))/p.movement.mouseSensitivity);yield return null;yield return null;}
  void Reply(){p.ui.ActiveButtonRoot.GetComponentsInChildren<UnityEngine.UI.Button>().First(x=>x.gameObject.activeSelf&&x!=p.ui.buttonTemplate).onClick.Invoke();}
  IEnumerator Start()
- {
+ {var opening=FindAnyObjectByType<MorningOpeningController>();if(opening)opening.DebugSkipOpening();
   director=FindAnyObjectByType<BedroomEncounterDirector>();p=director.phases;w=director.window;d=director.door;u=director.underBed;f=w.flashlight;b=d.breath;director.automaticScheduling=false;director.quietInterval=.05f;
   originalInput=InputSystem.settings;testInput=Instantiate(originalInput);testInput.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;testInput.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;InputSystem.settings=testInput;keyboard=InputSystem.AddDevice<Keyboard>("DefenseResourceVerification");mouse=InputSystem.AddDevice<Mouse>("DefenseResourceMouse");
   oldDoor=d.nightConfigs;d.nightConfigs=oldDoor.Select(Instantiate).ToArray();foreach(var c in d.nightConfigs){c.footstepsDuration=.1f;c.approachSilence=.1f;c.gentleDuration=.15f;c.aggressiveDuration=.15f;c.silenceAfterBanging=.1f;c.handleDuration=.1f;c.openingDuration=.2f;c.attackDuration=.2f;c.retreatDuration=.2f;}

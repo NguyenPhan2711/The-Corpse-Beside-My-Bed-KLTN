@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum NightPlayerState { InBed, GettingOutOfBed, OutOfBed, ReturningToBed }
-public enum BedroomPhase { MorningExploration, MorningDesk, NightGameplay, NightWon, NightLost, NightIntroduction }
+public enum BedroomPhase { MorningExploration, MorningDesk, NightGameplay, NightWon, NightLost, NightIntroduction, MorningOpening }
 
 public sealed class BedroomPhaseController : MonoBehaviour
 {
@@ -38,6 +38,10 @@ public sealed class BedroomPhaseController : MonoBehaviour
     public Renderer windowPane;
     [Min(.05f)] public float cameraTransitionSeconds = .65f;
     public float deskYawLimit = 65, deskPitchLimit = 40, nightYawLimit = 165, nightPitchLimit = 65;
+    [Header("Morning opening")]
+    public MorningOpeningController opening;
+    [Tooltip("Head on the pillow, looking along the bed.")] public Transform openingCameraAnchor;
+    [Tooltip("Mouse-look limits around the opening anchor, in degrees. Right turns toward the corpse.")] [Range(0, 180)] public float openingLookLeft = 15, openingLookRight = 95, openingLookUp = 25, openingLookDown = 30;
     BedroomPhase state = BedroomPhase.MorningExploration;
     public event Action<BedroomPhase> PhaseChanged;
     public BedroomPhase State { get => state; private set { if (state == value) return; state = value; PhaseChanged?.Invoke(value); } }
@@ -61,6 +65,7 @@ public sealed class BedroomPhaseController : MonoBehaviour
     void Update()
     {
         if (IsTransitioning || State == BedroomPhase.MorningExploration || NightStanding) return;
+        if (State == BedroomPhase.MorningOpening) { UpdateOpeningLook(); return; }
         if (State == BedroomPhase.MorningDesk && interactor.CancelPressed)
         {
             if (ui.ModalOpen) ui.CloseModal(); else StandUp();
@@ -76,6 +81,7 @@ public sealed class BedroomPhaseController : MonoBehaviour
     }
     void LateUpdate()
     {
+        if (State == BedroomPhase.MorningOpening && !IsTransitioning) { ApplyOpeningCamera(); return; }
         if (IsTransitioning || NightStanding || (State != BedroomPhase.MorningDesk && State != BedroomPhase.NightGameplay && State != BedroomPhase.NightIntroduction)) return;
         var anchor = State == BedroomPhase.MorningDesk ? morningCameraAnchor : nightCameraAnchor;
         view.transform.SetPositionAndRotation(anchor.position, anchor.rotation * Quaternion.Euler(pitch, yaw, 0));
@@ -212,7 +218,9 @@ public sealed class BedroomPhaseController : MonoBehaviour
     }
     IEnumerator MorningRoutine()
     {
-        IsTransitioning = true; yield return Fade(0, 1); ui.DismissResult(); tasks.BeginNextDay(); RestoreStanding();
+        IsTransitioning = true; yield return Fade(0, 1); ui.DismissResult(); tasks.BeginNextDay();
+        if (opening && opening.PlaysOn(tasks.CurrentDay)) { IsTransitioning = false; opening.TryBegin(tasks.CurrentDay); yield break; }
+        RestoreStanding();
         State = BedroomPhase.MorningExploration; yield return Fade(1, 0); IsTransitioning = false;
     }
     public void SetNarrativeFocus(Transform target,float blend){narrativeFocus=target;narrativeFocusBlend=Mathf.Clamp01(blend);}
@@ -220,7 +228,46 @@ public sealed class BedroomPhaseController : MonoBehaviour
     public void BeginNightGameplay(){if(State!=BedroomPhase.NightIntroduction||IsTransitioning)return;State=BedroomPhase.NightGameplay;ClearHeldDefenses();night.BeginNight();CaptureCursor();}
     public void DebugBeginIntroduction(int day)
     {
-        if(!(Application.isEditor||Debug.isDebugBuild))return;if(introductions)introductions.CancelIntroduction();StopAllCoroutines();nightTravel=null;IsTransitioning=false;night.StopNight();ui.CancelDialogue();ui.DismissResult();State=BedroomPhase.MorningExploration;tasks.DebugSetDay(day);SuspendMovement();SetBody(true);view.transform.SetPositionAndRotation(nightCameraAnchor.position,nightCameraAnchor.rotation);yaw=pitch=0;SetPlayerState(NightPlayerState.InBed);timeOfDayLighting.EnterNight();night.PrepareNight();State=BedroomPhase.NightIntroduction;ClearHeldDefenses();ui.SetFade(0);introductions.BeginIntroduction();CaptureCursor();
+        if(!(Application.isEditor||Debug.isDebugBuild))return;if(opening)opening.Cancel();if(introductions)introductions.CancelIntroduction();StopAllCoroutines();nightTravel=null;IsTransitioning=false;night.StopNight();ui.CancelDialogue();ui.DismissResult();State=BedroomPhase.MorningExploration;tasks.DebugSetDay(day);SuspendMovement();SetBody(true);view.transform.SetPositionAndRotation(nightCameraAnchor.position,nightCameraAnchor.rotation);yaw=pitch=0;SetPlayerState(NightPlayerState.InBed);timeOfDayLighting.EnterNight();night.PrepareNight();State=BedroomPhase.NightIntroduction;ClearHeldDefenses();ui.SetFade(0);introductions.BeginIntroduction();CaptureCursor();
+    }
+    // Morning opening: head on the pillow; the player only turns their head (no camera moves of its own).
+    public void BeginOpening()
+    {
+        IsTransitioning = false; SuspendMovement(); SetBody(true); yaw = pitch = 0;
+        State = BedroomPhase.MorningOpening; view.transform.SetPositionAndRotation(openingCameraAnchor.position, openingCameraAnchor.rotation); CaptureCursor();
+    }
+    void UpdateOpeningLook()
+    {
+        if ((ui.ModalOpen && !ui.DialogueAllowsLook) || !opening || !opening.LookEnabled) return;
+        if (interactor.ClickPressed) CaptureCursor();
+        if (Cursor.lockState != CursorLockMode.Locked) return;
+        var look = interactor.Look * movement.mouseSensitivity;
+        yaw = Mathf.Clamp(yaw + look.x, -openingLookLeft, openingLookRight);
+        pitch = Mathf.Clamp(pitch - look.y, -openingLookUp, openingLookDown);
+    }
+    void ApplyOpeningCamera()
+    {
+        // Turning around the world vertical keeps the bed level on screen while the head turns.
+        view.transform.SetPositionAndRotation(openingCameraAnchor.position, Quaternion.AngleAxis(yaw, Vector3.up) * openingCameraAnchor.rotation * Quaternion.Euler(pitch, 0, 0));
+    }
+    public bool FinishOpeningGetUp(Transform stand)
+    {
+        if (State != BedroomPhase.MorningOpening || IsTransitioning || ui.ModalOpen) return false;
+        StartCoroutine(OpeningGetUpRoutine(stand)); return true;
+    }
+    IEnumerator OpeningGetUpRoutine(Transform stand)
+    {
+        IsTransitioning = true; yield return Fade(0, 1);
+        RestoreStandingAt(stand.position, stand.rotation, false);
+        standingPosition = stand.position; standingRotation = stand.rotation; State = BedroomPhase.MorningExploration;
+        yield return Fade(1, 0); Physics.SyncTransforms(); capsule.enabled = true; movement.enabled = true; IsTransitioning = false; CaptureCursor();
+    }
+    public void DebugEndOpening(Transform stand)
+    {
+        if(!(Application.isEditor||Debug.isDebugBuild))return;
+        StopAllCoroutines(); IsTransitioning = false; ui.SetFade(0);
+        if (State == BedroomPhase.MorningOpening) { RestoreStandingAt(stand.position, stand.rotation); standingPosition = stand.position; standingRotation = stand.rotation; State = BedroomPhase.MorningExploration; }
+        else if (State == BedroomPhase.MorningExploration) { Physics.SyncTransforms(); capsule.enabled = true; movement.enabled = true; CaptureCursor(); }
     }
 }
 

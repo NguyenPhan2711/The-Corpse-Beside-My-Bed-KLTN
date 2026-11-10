@@ -19,7 +19,7 @@ public sealed class SilentSchedulingPlayModeChecks : MonoBehaviour
  IEnumerator Aim(Vector3 target){AimNow(target);yield return null;yield return null;}
  void Reply(){p.ui.ActiveButtonRoot.GetComponentsInChildren<UnityEngine.UI.Button>().First(b=>b.gameObject.activeSelf&&b!=p.ui.buttonTemplate).onClick.Invoke();}
  IEnumerator Start()
- {
+ {var opening=FindAnyObjectByType<MorningOpeningController>();if(opening)opening.DebugSkipOpening();
   p=FindAnyObjectByType<BedroomPhaseController>();director=FindAnyObjectByType<BedroomEncounterDirector>();w=director.window;d=director.door;u=director.underBed;
   SchedulingTestOverride.Configure(director,.2f);director.automaticScheduling=false;director.quietInterval=.05f;director.selectionInterval=.05f;
   originalInput=InputSystem.settings;testInput=Instantiate(originalInput);testInput.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;testInput.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;InputSystem.settings=testInput;keyboard=InputSystem.AddDevice<Keyboard>("SilentSchedulerVerification");mouse=InputSystem.AddDevice<Mouse>("SilentSchedulerMouse");

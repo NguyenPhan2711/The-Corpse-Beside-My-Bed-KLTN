@@ -16,6 +16,12 @@ public sealed class TimeOfDayLightingController : MonoBehaviour
         public Color ambient = new Color(.25f, .3f, .4f);
         public Color windowColor = new Color(.5f, .7f, .9f);
         [ColorUsage(false, true)] public Color windowEmission = new Color(.2f, .4f, .6f);
+        [Tooltip("Sky backdrop behind the open window; also the camera background.")]
+        [ColorUsage(false, true)] public Color exteriorSky = new Color(.55f, .72f, .9f);
+        [Tooltip("Base color of the hallway surfaces behind the main door.")]
+        public Color hallwayColor = new Color(.3f, .29f, .27f);
+        [Min(0)] public float hallwayLightIntensity = .35f;
+        [Range(0, 1)] public float reflectionIntensity = 1;
     }
     public enum MilestoneKind { LaptopReply, TruthReplyCount, ObjectiveComplete }
     [Serializable] public class StoryMilestone
@@ -31,14 +37,19 @@ public sealed class TimeOfDayLightingController : MonoBehaviour
     public RoomLightSwitch ceilingSwitch;
     public Light windowDaylight;
     public Renderer windowPane;
+    [Header("Exterior")]
+    public Camera view;
+    public Renderer exteriorBackdrop;
+    public Renderer[] hallwaySurfaces;
+    public Light hallwayLight;
     [Min(.01f)] public float transitionSeconds = 3f;
     [Range(0, 1)] public float afternoonThreshold = .2f;
     [Range(0, 1)] public float eveningThreshold = .6f;
-    public LightingProfile morning = new LightingProfile { daylightColor = new Color(.76f, .86f, 1), daylightIntensity = 1.8f, ambient = new Color(.28f, .33f, .40f), windowColor = new Color(.54f, .72f, .86f), windowEmission = new Color(.27f, .42f, .60f) };
-    public LightingProfile afternoon = new LightingProfile { daylightColor = new Color(1, .72f, .43f), daylightIntensity = 1.15f, lightRotation = new Vector3(18, 205, 0), shadowStrength = .45f, ambient = new Color(.23f, .20f, .18f), windowColor = new Color(.72f, .48f, .27f), windowEmission = new Color(.44f, .27f, .12f) };
-    public LightingProfile evening = new LightingProfile { daylightColor = new Color(.53f, .45f, .78f), daylightIntensity = .30f, lightRotation = new Vector3(9, 195, 0), ambient = new Color(.09f, .075f, .14f), windowColor = new Color(.18f, .15f, .32f), windowEmission = new Color(.07f, .045f, .16f) };
-    public LightingProfile lateEvening = new LightingProfile { daylightColor = new Color(.43f, .55f, .83f), daylightIntensity = .11f, lightRotation = new Vector3(25, 180, 0), ambient = new Color(.045f, .055f, .09f), windowColor = new Color(.035f, .045f, .09f), windowEmission = new Color(.012f, .018f, .045f) };
-    public LightingProfile night = new LightingProfile { daylightColor = new Color(.40f, .52f, .82f), daylightIntensity = .08f, lightRotation = new Vector3(25, 180, 0), ambient = new Color(.04f, .05f, .085f), windowColor = new Color(.025f, .035f, .075f), windowEmission = new Color(.01f, .016f, .04f) };
+    public LightingProfile morning = new LightingProfile { daylightColor = new Color(.76f, .86f, 1), daylightIntensity = 1.8f, ambient = new Color(.28f, .33f, .40f), windowColor = new Color(.54f, .72f, .86f), windowEmission = new Color(.27f, .42f, .60f), exteriorSky = new Color(.55f, .72f, .9f), hallwayColor = new Color(.3f, .29f, .27f), hallwayLightIntensity = .35f, reflectionIntensity = 1 };
+    public LightingProfile afternoon = new LightingProfile { daylightColor = new Color(1, .72f, .43f), daylightIntensity = 1.15f, lightRotation = new Vector3(18, 205, 0), shadowStrength = .45f, ambient = new Color(.23f, .20f, .18f), windowColor = new Color(.72f, .48f, .27f), windowEmission = new Color(.44f, .27f, .12f), exteriorSky = new Color(.85f, .58f, .36f), hallwayColor = new Color(.26f, .22f, .18f), hallwayLightIntensity = .3f, reflectionIntensity = .85f };
+    public LightingProfile evening = new LightingProfile { daylightColor = new Color(.53f, .45f, .78f), daylightIntensity = .30f, lightRotation = new Vector3(9, 195, 0), ambient = new Color(.09f, .075f, .14f), windowColor = new Color(.18f, .15f, .32f), windowEmission = new Color(.07f, .045f, .16f), exteriorSky = new Color(.3f, .17f, .12f), hallwayColor = new Color(.11f, .09f, .08f), hallwayLightIntensity = .12f, reflectionIntensity = .45f };
+    public LightingProfile lateEvening = new LightingProfile { daylightColor = new Color(.43f, .55f, .83f), daylightIntensity = .11f, lightRotation = new Vector3(25, 180, 0), ambient = new Color(.045f, .055f, .09f), windowColor = new Color(.035f, .045f, .09f), windowEmission = new Color(.012f, .018f, .045f), exteriorSky = new Color(.05f, .06f, .11f), hallwayColor = new Color(.04f, .04f, .05f), hallwayLightIntensity = .05f, reflectionIntensity = .2f };
+    public LightingProfile night = new LightingProfile { daylightColor = new Color(.40f, .52f, .82f), daylightIntensity = .08f, lightRotation = new Vector3(25, 180, 0), ambient = new Color(.04f, .05f, .085f), windowColor = new Color(.025f, .035f, .075f), windowEmission = new Color(.01f, .016f, .04f), exteriorSky = new Color(.035f, .05f, .1f), hallwayColor = new Color(.02f, .022f, .03f), hallwayLightIntensity = .025f, reflectionIntensity = .1f };
     public StoryMilestone[] milestones =
     {
         new StoryMilestone { id = "message-class", kind = MilestoneKind.LaptopReply, messageOrObjectiveId = "class" },
@@ -59,8 +70,8 @@ public sealed class TimeOfDayLightingController : MonoBehaviour
     bool initialized, subscribed;
     float blendTime;
     LightingProfile start, destination;
-    MaterialPropertyBlock windowBlock;
-    Color appliedWindowColor, appliedWindowEmission;
+    MaterialPropertyBlock windowBlock, exteriorBlock;
+    Color appliedWindowColor, appliedWindowEmission, appliedExterior, appliedHallway;
     public event Action<StoryTimeOfDay> StageChanged;
     void OnEnable()
     {
@@ -118,7 +129,8 @@ public sealed class TimeOfDayLightingController : MonoBehaviour
     }
     LightingProfile Capture()
     {
-        return new LightingProfile { daylightColor = windowDaylight.color, daylightIntensity = windowDaylight.intensity, lightRotation = windowDaylight.transform.eulerAngles, shadowStrength = windowDaylight.shadowStrength, ambient = RenderSettings.ambientLight, windowColor = appliedWindowColor, windowEmission = appliedWindowEmission };
+        return new LightingProfile { daylightColor = windowDaylight.color, daylightIntensity = windowDaylight.intensity, lightRotation = windowDaylight.transform.eulerAngles, shadowStrength = windowDaylight.shadowStrength, ambient = RenderSettings.ambientLight, windowColor = appliedWindowColor, windowEmission = appliedWindowEmission,
+            exteriorSky = appliedExterior, hallwayColor = appliedHallway, hallwayLightIntensity = hallwayLight != null ? hallwayLight.intensity : 0, reflectionIntensity = RenderSettings.reflectionIntensity };
     }
     void BlendTo(LightingProfile profile, bool immediate)
     {
@@ -148,5 +160,14 @@ public sealed class TimeOfDayLightingController : MonoBehaviour
             if (windowBlock == null) { windowBlock = new MaterialPropertyBlock(); windowPane.GetPropertyBlock(windowBlock); }
             windowBlock.SetColor("_BaseColor", appliedWindowColor); windowBlock.SetColor("_EmissionColor", appliedWindowEmission); windowPane.SetPropertyBlock(windowBlock);
         }
+        // The room has no real exterior: the window backdrop, hallway and camera background stand in for it.
+        RenderSettings.reflectionIntensity = Mathf.Lerp(start.reflectionIntensity, destination.reflectionIntensity, t);
+        appliedExterior = Color.Lerp(start.exteriorSky, destination.exteriorSky, t);
+        appliedHallway = Color.Lerp(start.hallwayColor, destination.hallwayColor, t);
+        if (exteriorBlock == null) exteriorBlock = new MaterialPropertyBlock();
+        if (view != null) { view.clearFlags = CameraClearFlags.SolidColor; view.backgroundColor = appliedExterior; }
+        if (exteriorBackdrop != null) { exteriorBlock.Clear(); exteriorBlock.SetColor("_BaseColor", appliedExterior); exteriorBackdrop.SetPropertyBlock(exteriorBlock); }
+        if (hallwaySurfaces != null) { exteriorBlock.Clear(); exteriorBlock.SetColor("_BaseColor", appliedHallway); foreach (var surface in hallwaySurfaces) if (surface != null) surface.SetPropertyBlock(exteriorBlock); }
+        if (hallwayLight != null) { hallwayLight.intensity = Mathf.Lerp(start.hallwayLightIntensity, destination.hallwayLightIntensity, t); hallwayLight.enabled = hallwayLight.intensity > .001f; }
     }
 }

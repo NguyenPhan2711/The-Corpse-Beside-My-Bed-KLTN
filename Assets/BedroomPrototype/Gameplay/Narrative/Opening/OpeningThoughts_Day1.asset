@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43b58dd5625d7e4489ca099088080bb, type: 3}
+  m_Name: OpeningThoughts_Day1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
+  sequenceId: opening-day1-thoughts
+  blockMovement: 1
+  allowLook: 1
+  autoAdvanceSeconds: 3.5
+  advanceWithInteract: 1
+  lines:
+  - speaker: Thought
+    text: Still here.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: Dialogue
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: opening.day1.line00
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: Thought
+    text: Glass. Colored glass, shaped like a person.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: Dialogue
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: opening.day1.line01
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: Thought
+    text: It's comforting to look at.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: Dialogue
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: opening.day1.line02
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  - speaker: Thought
+    text: The smell is awful, though.
+    localizedText:
+      m_TableReference:
+        m_TableCollectionName: Dialogue
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: opening.day1.line03
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    charactersPerSecond: -1
+    eventId: 
+    eventAfterLine: 1
+    pauseForAnimation: 0
+    hideDuringEvent: 0
+    condition:
+      day: 0
+      night: 0
+      requiredFlag: 
+      flagValue: 1
+      choiceSource: 
+      choiceEntry: 
+      choiceReply: 
+    choices: []
+  references:
+    version: 2
+    RefIds: []

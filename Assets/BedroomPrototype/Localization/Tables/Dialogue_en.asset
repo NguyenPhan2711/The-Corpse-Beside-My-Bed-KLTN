@@ -194,6 +194,22 @@ MonoBehaviour:
     m_Localized: Would it really be so terrible to rest?
     m_Metadata:
       m_Items: []
+  - m_Id: 3632541317148672
+    m_Localized: Still here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632541480726528
+    m_Localized: Glass. Colored glass, shaped like a person.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632541480726529
+    m_Localized: It's comforting to look at.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632541480726530
+    m_Localized: The smell is awful, though.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

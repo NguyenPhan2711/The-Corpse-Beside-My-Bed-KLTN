@@ -19,7 +19,7 @@ public sealed class StoryLightingPlayModeChecks : MonoBehaviour
     InputSettings originalInputSettings, testInputSettings;
     float originalBlend, originalNight;
     IEnumerator Start()
-    {
+    {var opening=FindAnyObjectByType<MorningOpeningController>();if(opening)opening.DebugSkipOpening();
         phase = FindAnyObjectByType<BedroomPhaseController>(); lighting = phase.timeOfDayLighting;
         originalBlend = lighting.transitionSeconds; originalNight = phase.night.nightDurationSeconds;
         originalInputSettings = InputSystem.settings;

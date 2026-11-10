@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 [Serializable]public sealed class DialogueEventBinding { public string id; public UnityEngine.Events.UnityEvent action=new UnityEngine.Events.UnityEvent(); }
-[Serializable]public sealed class DialogueSpeakerStyle {public string id,displayName;public Color nameColor=new Color(.78f,.75f,.68f),textColor=new Color(.92f,.91f,.86f);}
+[Serializable]public sealed class DialogueSpeakerStyle {public string id,displayName;public Color nameColor=new Color(.78f,.75f,.68f),textColor=new Color(.92f,.91f,.86f);[Tooltip("Inner thoughts: italic text, no speaker name.")]public bool italic,hideName;}
 public sealed partial class BedroomGameUI
 {
  public GameObject dialoguePanel;public TMP_Text dialogueSpeaker,dialogueText,dialogueContinue;public Transform dialogueChoiceRoot;
@@ -17,7 +17,7 @@ public sealed partial class BedroomGameUI
  public DialogueSequence CurrentDialogue{get;private set;}public bool DialogueAllowsLook=>DialogueActive&&CurrentDialogue&&CurrentDialogue.allowLook&&!DialogueBusy;
  public Transform ActiveButtonRoot=>DialogueActive?dialogueChoiceRoot:buttonRoot;
  public bool GameplayInputSuppressed=>DialogueActive||Time.frameCount<=releaseInputFrame;
- Func<string,IEnumerator> eventHandler;Action completed;Action<int,int> choiceHandler;bool restoreMovement;CursorLockMode previousCursor;bool previousCursorVisible;BedroomPhase previousPhase;int openedFrame,advancedFrame=-1,releaseInputFrame=-1,characterCount;float revealCount,revealSpeed,nextAdvance;Coroutine blockingEvent;
+ Func<string,IEnumerator> eventHandler;Action completed;Action<int,int> choiceHandler;bool restoreMovement;CursorLockMode previousCursor;bool previousCursorVisible;BedroomPhase previousPhase;int openedFrame,advancedFrame=-1,releaseInputFrame=-1,characterCount;float revealCount,revealSpeed,nextAdvance,autoAdvanceAt=-1;Coroutine blockingEvent;
  static InputAction CreateAdvance(){var action=new InputAction("Dialogue advance",InputActionType.Button,"<Mouse>/leftButton");action.AddBinding("<Keyboard>/enter");return action;}
  void InitializeDialogue(){if(dialoguePanel)dialoguePanel.SetActive(false);}
  void OnEnable(){dialogueAdvance.Enable();}
@@ -26,9 +26,11 @@ public sealed partial class BedroomGameUI
  void UpdateDialogue()
  {
   if(!DialogueActive)return;
-  if(DialogueTyping){revealCount+=Time.unscaledDeltaTime*revealSpeed;dialogueText.maxVisibleCharacters=Mathf.Min(characterCount,Mathf.FloorToInt(revealCount));if(dialogueText.maxVisibleCharacters>=characterCount){DialogueTyping=false;UpdateContinue();}}
+  if(DialogueTyping){revealCount+=Time.unscaledDeltaTime*revealSpeed;dialogueText.maxVisibleCharacters=Mathf.Min(characterCount,Mathf.FloorToInt(revealCount));if(dialogueText.maxVisibleCharacters>=characterCount){DialogueTyping=false;UpdateContinue();ScheduleAutoAdvance();}}
+  if(autoAdvanceAt>=0&&!DialogueTyping&&!DialogueBusy&&!HasChoices&&!phases.IsObservationLocked&&Time.unscaledTime>=autoAdvanceAt){autoAdvanceAt=-1;advancedFrame=Time.frameCount;nextAdvance=Time.unscaledTime+minimumAdvanceInterval;FinishDialogueLine();return;}
   if(!DialogueBusy&&!phases.IsObservationLocked&&Time.frameCount>openedFrame&&dialogueAdvance.WasPressedThisFrame())AdvanceDialogue();
  }
+ void ScheduleAutoAdvance(){autoAdvanceAt=CurrentDialogue&&CurrentDialogue.autoAdvanceSeconds>0&&!HasChoices?Time.unscaledTime+CurrentDialogue.autoAdvanceSeconds:-1;}
  void UpdateContinue(){if(dialogueContinue)dialogueContinue.text=DialogueBusy?"":HasChoices?GameText.UI("dialogue.choose"):DialogueTyping?GameText.UI("dialogue.reveal"):GameText.UI("dialogue.continue");}
  bool HasChoices=>CurrentDialogue&&DialogueLineIndex>=0&&DialogueLineIndex<CurrentDialogue.lines.Length&&CurrentDialogue.lines[DialogueLineIndex].choices!=null&&CurrentDialogue.lines[DialogueLineIndex].choices.Length>0;
  public bool TryShowDialogue(DialogueSequence sequence,Action onComplete=null,Func<string,IEnumerator> handler=null,Action<int,int> onChoice=null)
@@ -44,7 +46,7 @@ public sealed partial class BedroomGameUI
  {
   if(!DialogueActive||DialogueBusy||Time.frameCount<=openedFrame||advancedFrame==Time.frameCount||Time.unscaledTime<nextAdvance)return false;
   advancedFrame=Time.frameCount;nextAdvance=Time.unscaledTime+minimumAdvanceInterval;
-  if(DialogueTyping){dialogueText.maxVisibleCharacters=int.MaxValue;DialogueTyping=false;UpdateContinue();return true;}
+  if(DialogueTyping){dialogueText.maxVisibleCharacters=int.MaxValue;DialogueTyping=false;UpdateContinue();ScheduleAutoAdvance();return true;}
   if(HasChoices)return false;
   FinishDialogueLine();return true;
  }
@@ -60,10 +62,10 @@ public sealed partial class BedroomGameUI
  void PresentDialogueLine()
  {
   if(!DialogueActive)return;var line=CurrentDialogue.lines[DialogueLineIndex];dialoguePanel.SetActive(true);
-  var style=speakers.FirstOrDefault(s=>s.id==line.speaker);dialogueSpeaker.text=GameText.Get(GameText.GameUI,"speaker."+line.speaker,style!=null?style.displayName:line.speaker);dialogueSpeaker.color=style!=null?style.nameColor:Color.white;dialogueText.color=style!=null?style.textColor:Color.white;
+  var style=speakers.FirstOrDefault(s=>s.id==line.speaker);dialogueSpeaker.text=style!=null&&style.hideName?"":GameText.Get(GameText.GameUI,"speaker."+line.speaker,style!=null?style.displayName:line.speaker);dialogueText.fontStyle=style!=null&&style.italic?FontStyles.Italic:FontStyles.Normal;dialogueSpeaker.color=style!=null?style.nameColor:Color.white;dialogueText.color=style!=null?style.textColor:Color.white;
   dialogueText.text=line.Text;dialogueText.ForceMeshUpdate();characterCount=dialogueText.textInfo.characterCount;revealCount=0;revealSpeed=line.charactersPerSecond<0?defaultCharactersPerSecond:line.charactersPerSecond;DialogueTyping=revealSpeed>0;dialogueText.maxVisibleCharacters=DialogueTyping?0:int.MaxValue;
   if(line.choices!=null)for(int i=0;i<line.choices.Length;i++){int index=i;var b=Instantiate(buttonTemplate,dialogueChoiceRoot);b.name="DialogueReply"+i;b.GetComponentInChildren<TMP_Text>(true).text=line.choices[i].Text;b.onClick.RemoveAllListeners();b.onClick.AddListener(()=>SelectDialogueChoice(index));var image=b.GetComponent<UnityEngine.UI.Image>();if(image)image.color=new Color(.16f,.16f,.17f,.98f);b.gameObject.SetActive(true);}
-  var rect=dialoguePanel.GetComponent<RectTransform>();rect.sizeDelta=new Vector2(rect.sizeDelta.x,HasChoices?240+line.choices.Length*42:210);UpdateContinue();
+  var rect=dialoguePanel.GetComponent<RectTransform>();rect.sizeDelta=new Vector2(rect.sizeDelta.x,HasChoices?240+line.choices.Length*42:210);UpdateContinue();autoAdvanceAt=-1;if(!DialogueTyping)ScheduleAutoAdvance();
  }
  public bool SelectDialogueChoice(int index)
  {
@@ -84,7 +86,7 @@ public sealed partial class BedroomGameUI
  public void CancelDialogue(){if(DialogueActive)EndDialogue(false);}
  void EndDialogue(bool invokeCompletion)
  {
-  if(!DialogueActive)return;StopAllCoroutines();blockingEvent=null;var callback=completed;completed=null;eventHandler=null;choiceHandler=null;DialogueActive=DialogueBusy=DialogueTyping=false;if(dialoguePanel)dialoguePanel.SetActive(false);ClearDialogueChoices();releaseInputFrame=Time.frameCount+1;
+  if(!DialogueActive)return;StopAllCoroutines();blockingEvent=null;var callback=completed;completed=null;eventHandler=null;choiceHandler=null;DialogueActive=DialogueBusy=DialogueTyping=false;autoAdvanceAt=-1;if(dialoguePanel)dialoguePanel.SetActive(false);ClearDialogueChoices();releaseInputFrame=Time.frameCount+1;
   if(restoreMovement&&phases.State==previousPhase&&!phases.IsTransitioning)phases.movement.enabled=true;restoreMovement=false;
   Cursor.lockState=previousCursor;Cursor.visible=previousCursorVisible;var previousDialogue=CurrentDialogue;CurrentDialogue=null;DialogueLineIndex=-1;if(previousDialogue&&(previousDialogue.hideFlags&HideFlags.DontSave)!=0)Destroy(previousDialogue);if(invokeCompletion)callback?.Invoke();
  }

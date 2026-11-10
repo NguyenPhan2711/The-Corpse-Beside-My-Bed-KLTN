@@ -191,6 +191,22 @@ MonoBehaviour:
     m_Key: truth-night-3.line14
     m_Metadata:
       m_Items: []
+  - m_Id: 3632541317148672
+    m_Key: opening.day1.line00
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632541480726528
+    m_Key: opening.day1.line01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632541480726529
+    m_Key: opening.day1.line02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632541480726530
+    m_Key: opening.day1.line03
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

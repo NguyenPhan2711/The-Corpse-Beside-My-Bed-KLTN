@@ -32,7 +32,7 @@ public sealed class UnderBedPlayModeChecks : MonoBehaviour
     int began, ended, successes, failures;
     Vector3 truthPosition, corpsePosition;
     IEnumerator Start()
-    {
+    {var opening=FindAnyObjectByType<MorningOpeningController>();if(opening)opening.DebugSkipOpening();
         ai = FindAnyObjectByType<UnderBedMonsterAI>(); blanket = ai.blanket; phase = ai.phases;
         SchedulingTestOverride.Configure((BedroomEncounterDirector)ai.encounterCoordinator, debugOnly ? 60 : .35f);
         originalInput = InputSystem.settings; testInput = Instantiate(originalInput);

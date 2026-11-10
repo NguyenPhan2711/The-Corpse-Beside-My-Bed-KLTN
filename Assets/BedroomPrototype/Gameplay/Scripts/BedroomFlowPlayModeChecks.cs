@@ -21,7 +21,7 @@ public sealed class BedroomFlowPlayModeChecks : MonoBehaviour
     InputSettings originalInputSettings, testInputSettings;
     float duration;
     IEnumerator Start()
-    {
+    {var opening=FindAnyObjectByType<MorningOpeningController>();if(opening)opening.DebugSkipOpening();
         phase = FindAnyObjectByType<BedroomPhaseController>(); duration = phase.night.nightDurationSeconds;
         originalInputSettings = InputSystem.settings;
         testInputSettings = Instantiate(originalInputSettings);

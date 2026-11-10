@@ -18,11 +18,12 @@ public sealed partial class BedroomGameUI : MonoBehaviour
     void Update()
     {
         UpdateDialogue();
-        bool desk = phases.State == BedroomPhase.MorningDesk && !phases.IsTransitioning;
+        bool desk = phases.State == BedroomPhase.MorningDesk && !phases.IsTransitioning && !(phases.opening && phases.opening.HidesChecklist);
         prompt.text = !ModalOpen && !phases.IsTransitioning ? interactor.CurrentPrompt : "";
         checklistPanel.SetActive(desk);
         if (desk) checklist.text = GameText.Format(GameText.GameUI, "checklist.header", tasks.CurrentDay) + "\n" + string.Join("\n", tasks.Definition.objectives.Select(o => (tasks.IsComplete(o.id) ? "[x] " : "[ ] ") + o.Label)) + "\n\n" + GameText.UI("checklist.footer");
         status.text = (phases.State == BedroomPhase.NightIntroduction || phases.State == BedroomPhase.NightGameplay || phases.State == BedroomPhase.NightWon || phases.State == BedroomPhase.NightLost) ? GameText.Format(GameText.GameUI, "status.night", tasks.CurrentDay, GameText.UI(ClockKeys[phases.night.Hour])) : GameText.Format(GameText.GameUI, "status.day", tasks.CurrentDay);
+        status.gameObject.SetActive(!(phases.opening && phases.opening.HidesHud));
         crosshair.gameObject.SetActive(!ModalOpen && !phases.IsTransitioning && (phases.State == BedroomPhase.MorningExploration || desk || phases.State == BedroomPhase.NightGameplay));
     }
     public void SetFade(float alpha) { var c = fade.color; c.a = Mathf.Clamp01(alpha); fade.color = c; fade.raycastTarget = alpha > .01f; }
